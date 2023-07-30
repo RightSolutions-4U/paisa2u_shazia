@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\paisa2u.common.props" />
+</Project>

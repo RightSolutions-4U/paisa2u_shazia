@@ -1,0 +1,80 @@
+﻿<div class="container" style="top: 100px;">
+    <div class="row" >
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8 align-items-md-center" style=" display: flex;justify-content: center;">
+            <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
+                <div class="text-center text-md-start card-hover">
+                    <div class="card-body">
+                        <header class="text-center mb-4">
+                            <h2 class="h2 g-color-black g-font-weight-400 trn" data-trn="login_to_your_account">Login to your account</h2>
+                        </header>
+                        <!-- Form -->
+                        <form class="g-py-15" id="gr_log_in_form" action="/Users/CheckLogin"  method="post">
+                            <div class="form-group mb-4">
+                                <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="email" for="gr_login_email" >Email <span class="fw-color-red">*</span>:</label>
+                                <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_your_email" id="gr_login_email" name="gr_login_email" type="email" placeholder="Enter your email address">
+                            </div>
+
+                            <div class="form-group g-mb-35">
+                                <div class="row justify-content-between">
+                                    <div class="col align-self-center">
+                                        <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="password" for="gr_login_password">Password <span class="fw-color-red">*</span>:</label>
+                                    </div>
+
+                                </div>
+                                <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 mb-3 trn" data-trn-placeholder="enter_your_password" id="gr_login_password" name="gr_login_password" type="password" placeholder="Enter your password">
+                                <div class="row justify-content-between">
+                                    <div class="col-md-4 col-sm-12 align-self-center mb-4">
+                                        <button id="gr_log_in" class="btn btn-lg btn-success rounded g-py-13 g-px-25 trn gr_spinner_btn" data-trn="login" type="submit">
+                                            Login
+                                            <span class="spinner"></span>
+                                        </button>
+                                    </div>
+                                    <div class="col-12 align-self-center mb-4">
+                                        <a class="d-inline-block g-font-size-12 mb-2 trn" data-trn="forgot_password" href="#" id="gr_forgot_password_link">Forgot password?</a>
+                                    </div>
+                                    <div class="col-12 align-self-center mb-7">
+                                        If you are not registered <a class="d-inline-block g-font-size-12 mb-2 trn" data-trn="register" href="#" id="gr_register">click here!</a>
+                                    </div>
+                                    @*<div class="col-12 align-self-center mb-4">
+                                        asdasdsa
+                                    </div>*@
+                                    
+                                </div>
+                            </div>
+                        </form>
+                        <!-- End Form -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-2">
+        </div>
+       @* <form asp-action="CheckLogin" asp-controller="Users" method="post" class="mt-4">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="text-dark" for="uname">E-mail</label>
+                        <input class="form-control" name="uname" id="uname" type="text"
+                               placeholder="digite e-mail">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="text-dark" for="pwd">Senha</label>
+                        <input class="form-control" name="pwd" id="pwd" type="password"
+                               placeholder="digite sua senha">
+                    </div>
+                </div>
+                <div class="col-lg-12 text-center">
+                    <button type="submit" class="btn btn-block btn-dark" title="Login" />
+                </div>
+
+            </div>
+        </form>*@
+
+    </div>
+</div>

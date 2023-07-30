@@ -1,0 +1,605 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\paisa2u.UI.bundle.scp.css",
+      "PackagePath": "staticwebassets\\paisa2u.UI.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\css\\theme-rtl.css",
+      "PackagePath": "staticwebassets\\assets\\css\\theme-rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\css\\theme-rtl.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\theme-rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\css\\theme-rtl.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\theme-rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\css\\theme-rtl.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\theme-rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\css\\theme.css",
+      "PackagePath": "staticwebassets\\assets\\css\\theme.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\css\\theme.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\theme.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\css\\theme.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\theme.min.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\css\\theme.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\theme.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Black.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Black.eot"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Black.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Black.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Black.woff"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Black.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Black.woff2"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-BlackItalic.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BlackItalic.eot"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-BlackItalic.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BlackItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-BlackItalic.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BlackItalic.woff"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-BlackItalic.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BlackItalic.woff2"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Bold.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Bold.eot"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Bold.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Bold.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Bold.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Bold.woff2"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-BoldItalic.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BoldItalic.eot"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-BoldItalic.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BoldItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-BoldItalic.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BoldItalic.woff"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-BoldItalic.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BoldItalic.woff2"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Book.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Book.eot"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Book.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Book.ttf"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Book.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Book.woff"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Book.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Book.woff2"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-BookItalic.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BookItalic.eot"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-BookItalic.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BookItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-BookItalic.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BookItalic.woff"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-BookItalic.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BookItalic.woff2"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Medium.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Medium.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Medium.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-Medium.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Medium.woff2"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-MediumItalic.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-MediumItalic.eot"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-MediumItalic.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-MediumItalic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-MediumItalic.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-MediumItalic.woff"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\fonts\\CircularStd-MediumItalic.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-MediumItalic.woff2"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\.gitkeep",
+      "PackagePath": "staticwebassets\\assets\\img\\.gitkeep"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\favicons\\android-chrome-192x192.png",
+      "PackagePath": "staticwebassets\\assets\\img\\favicons\\android-chrome-192x192.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\favicons\\android-chrome-512x512.png",
+      "PackagePath": "staticwebassets\\assets\\img\\favicons\\android-chrome-512x512.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\favicons\\apple-touch-icon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\favicons\\apple-touch-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\favicons\\browserconfig.xml",
+      "PackagePath": "staticwebassets\\assets\\img\\favicons\\browserconfig.xml"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\favicons\\favicon-16x16.png",
+      "PackagePath": "staticwebassets\\assets\\img\\favicons\\favicon-16x16.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\favicons\\favicon-32x32.png",
+      "PackagePath": "staticwebassets\\assets\\img\\favicons\\favicon-32x32.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\favicons\\favicon.ico",
+      "PackagePath": "staticwebassets\\assets\\img\\favicons\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\favicons\\manifest.json",
+      "PackagePath": "staticwebassets\\assets\\img\\favicons\\manifest.json"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\favicons\\mstile-150x150.png",
+      "PackagePath": "staticwebassets\\assets\\img\\favicons\\mstile-150x150.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\favicons\\site.webmanifest",
+      "PackagePath": "staticwebassets\\assets\\img\\favicons\\site.webmanifest"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\gallery\\fully-funded.png",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\fully-funded.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\gallery\\logo-icon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\logo-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\gallery\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\gallery\\short-terms.png",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\short-terms.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\gallery\\user-1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\user-1.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\gallery\\user-2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\user-2.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\gallery\\user-3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\user-3.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\icons\\farmer.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\farmer.svg"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\icons\\growth.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\growth.svg"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\icons\\planting.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\planting.svg"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\Vecteezy-License-Information.pdf",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\Vecteezy-License-Information.pdf"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\WhatsApp Image 2023-07-04 at 00.10.30.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\WhatsApp Image 2023-07-04 at 00.10.30.jpg"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\bg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\bg.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\footer-bg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\footer-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\hero-bg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\hero-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\hero-header.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\hero-header.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\hero-header1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\hero-header1.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\how-it-works.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\how-it-works.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\istockphoto-1153068006-612x612.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\istockphoto-1153068006-612x612.jpg"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\opportunities-bg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\opportunities-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\testimonial-bg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\testimonial-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\vecteezy_refer-a-friend-concept-referral-marketing-affiliate_12969121.eps",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\vecteezy_refer-a-friend-concept-referral-marketing-affiliate_12969121.eps"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\vecteezy_refer-a-friend-concept-referral-marketing-affiliate_12969121.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\vecteezy_refer-a-friend-concept-referral-marketing-affiliate_12969121.jpg"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\illustrations\\vecteezy_refer-a-friend-concept-referral-marketing-affiliate_12969121_73.zip",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\vecteezy_refer-a-friend-concept-referral-marketing-affiliate_12969121_73.zip"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\img\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\js\\bootstrap-navbar.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap-navbar.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\js\\theme.js",
+      "PackagePath": "staticwebassets\\assets\\js\\theme.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\js\\theme.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\theme.js.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\js\\theme.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\theme.min.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\js\\theme.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\theme.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\video\\.gitkeep",
+      "PackagePath": "staticwebassets\\assets\\video\\.gitkeep"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\video\\beach.jpg",
+      "PackagePath": "staticwebassets\\assets\\video\\beach.jpg"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\video\\beach.mp4",
+      "PackagePath": "staticwebassets\\assets\\video\\beach.mp4"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\assets\\video\\beach.webm",
+      "PackagePath": "staticwebassets\\assets\\video\\beach.webm"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.paisa2u.UI.props",
+      "PackagePath": "build\\paisa2u.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.paisa2u.UI.props",
+      "PackagePath": "buildMultiTargeting\\paisa2u.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.paisa2u.UI.props",
+      "PackagePath": "buildTransitive\\paisa2u.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.paisa2u.UI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
