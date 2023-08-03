@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8X0TRyxyIifpl9Pn44w5wPiuoma9Ur86jgdHpH/gpew=",
+  "Hash": "G9wZI4Bm2HutsqivakbOns18hEtRmh048tMLVlCceNQ=",
   "Source": "paisa2u.UI",
   "BasePath": "_content/paisa2u.UI",
   "Mode": "Default",
@@ -2552,6 +2552,40 @@
       "OriginalItemSpec": "wwwroot\\assets\\video\\beach.webm"
     },
     {
+      "Identity": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\css\\mvc-grid\\fonts\\grid-glyphs.woff",
+      "SourceId": "paisa2u.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\",
+      "BasePath": "_content/paisa2u.UI",
+      "RelativePath": "css/mvc-grid/fonts/grid-glyphs.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\mvc-grid\\fonts\\grid-glyphs.woff"
+    },
+    {
+      "Identity": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\css\\mvc-grid\\mvc-grid.css",
+      "SourceId": "paisa2u.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\",
+      "BasePath": "_content/paisa2u.UI",
+      "RelativePath": "css/mvc-grid/mvc-grid.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\mvc-grid\\mvc-grid.css"
+    },
+    {
       "Identity": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\css\\site.css",
       "SourceId": "paisa2u.UI",
       "SourceType": "Discovered",
@@ -2584,6 +2618,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\js\\mvc-grid\\mvc-grid.js",
+      "SourceId": "paisa2u.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\",
+      "BasePath": "_content/paisa2u.UI",
+      "RelativePath": "js/mvc-grid/mvc-grid.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\mvc-grid\\mvc-grid.js"
     },
     {
       "Identity": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\js\\site.js",

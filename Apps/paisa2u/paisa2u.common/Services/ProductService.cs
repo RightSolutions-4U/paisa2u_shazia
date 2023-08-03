@@ -46,25 +46,6 @@ namespace paisa2u.common.Services
 
         public async Task<IEnumerable<ProductResource>> GetProduct(int productid, CancellationToken cancellationToken)
         {
-            //var product = await _context.Products
-            //    .FirstOrDefaultAsync(x => x.Productid == productid, cancellationToken);
-
-
-            //if (product == null)
-
-            //    throw new Exception("Product does not exist!");
-
-            //return new ProductResource(
-            //    product.Productid,
-            //    product.Catid,
-            //    product.Productname,
-            //    product.Productcode,
-            //    product.Picture,
-            //    product.Discountpercentage,
-            //    product.Discountamount,
-            //    product.Discountcode,
-            //    product.Dicountcondition
-            //    );
             List<ProductResource> productlist = new List<ProductResource>();
             var product1 = await _context.Products.Where(x => x.Productid == productid)
                 .ToListAsync(cancellationToken);

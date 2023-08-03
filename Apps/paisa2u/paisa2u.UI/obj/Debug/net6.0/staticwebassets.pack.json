@@ -345,12 +345,24 @@
       "PackagePath": "staticwebassets\\assets\\video\\beach.webm"
     },
     {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\css\\mvc-grid\\fonts\\grid-glyphs.woff",
+      "PackagePath": "staticwebassets\\css\\mvc-grid\\fonts\\grid-glyphs.woff"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\css\\mvc-grid\\mvc-grid.css",
+      "PackagePath": "staticwebassets\\css\\mvc-grid\\mvc-grid.css"
+    },
+    {
       "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\js\\mvc-grid\\mvc-grid.js",
+      "PackagePath": "staticwebassets\\js\\mvc-grid\\mvc-grid.js"
     },
     {
       "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\js\\site.js",

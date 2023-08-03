@@ -20,7 +20,6 @@
           "Swashbuckle.AspNetCore": "6.5.0",
           "System.IdentityModel.Tokens.Jwt": "6.31.0",
           "System.Security.Claims": "4.3.0",
-          "WebApiContrib.Formatting.Jsonp": "3.0.2",
           "paisa2u.common": "1.0.0"
         },
         "runtime": {
@@ -638,28 +637,6 @@
         }
       },
       "MessagePackAnalyzer/2.1.152": {},
-      "Microsoft.AspNet.WebApi.Client/5.0.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "runtime": {
-          "lib/net45/System.Net.Http.Formatting.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.11001.0"
-          }
-        }
-      },
-      "Microsoft.AspNet.WebApi.Core/5.0.0": {
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.0.0"
-        },
-        "runtime": {
-          "lib/net45/System.Web.Http.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.11001.0"
-          }
-        }
-      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.18": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.21.0"
@@ -2936,17 +2913,6 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "WebApiContrib.Formatting.Jsonp/3.0.2": {
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Core": "5.0.0"
-        },
-        "runtime": {
-          "lib/net45/WebApiContrib.Formatting.Jsonp.dll": {
-            "assemblyVersion": "3.0.2.0",
-            "fileVersion": "3.0.2.0"
-          }
-        }
-      },
       "paisa2u.common/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.9",
@@ -3356,20 +3322,6 @@
       "sha512": "sha512-uJhZlGMkXDaFYsH8V9S6o1EyvsUqB9mpU4DVBXNr0DXZVzZMhuLP1IkLj5xK3EKlaAcvkFkZv3eSvuz360wb3Q==",
       "path": "messagepackanalyzer/2.1.152",
       "hashPath": "messagepackanalyzer.2.1.152.nupkg.sha512"
-    },
-    "Microsoft.AspNet.WebApi.Client/5.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OMTp9ot40TZgZxnFO+S0ac0EY5CtQs6KTHkMSHmNFDc+a0tWMCsSBuOG6HoH9+G95wNhEfZrZ20btAsHMlQe7w==",
-      "path": "microsoft.aspnet.webapi.client/5.0.0",
-      "hashPath": "microsoft.aspnet.webapi.client.5.0.0.nupkg.sha512"
-    },
-    "Microsoft.AspNet.WebApi.Core/5.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ZOVLLtFpSM8nkJopUM9upbJEUkAUS60j6Sj1hDKewHaekWMUnnoMX/i3Ee+7KgxMGk13yxxQRHtSwcjh1JpJ4w==",
-      "path": "microsoft.aspnet.webapi.core/5.0.0",
-      "hashPath": "microsoft.aspnet.webapi.core.5.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.18": {
       "type": "package",
@@ -4742,13 +4694,6 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
-    },
-    "WebApiContrib.Formatting.Jsonp/3.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-vSG7c7ms1I5f+ZVhZio19shWeSrQlWnlxO9yP0daD3xxbuB5PR9lYux9Az7WlHaTWCGDDgY6ysELft+wpBLKIw==",
-      "path": "webapicontrib.formatting.jsonp/3.0.2",
-      "hashPath": "webapicontrib.formatting.jsonp.3.0.2.nupkg.sha512"
     },
     "paisa2u.common/1.0.0": {
       "type": "project",

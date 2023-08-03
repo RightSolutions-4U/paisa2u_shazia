@@ -63,7 +63,7 @@ namespace paisa2u.API.Controllers
         public async Task<List<RegUserResource>> GetRegUsers(CancellationToken cancellationToken)
         {
             return await _reguserService.GetRegUsers(cancellationToken);
-            /*return (IEnumerable<RegUserResource>)user;*/
+            
         }
 
         [HttpGet("GetAllReferrals")]

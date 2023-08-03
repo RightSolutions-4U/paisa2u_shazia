@@ -101,10 +101,6 @@
             "System.Security.Claims": {
               "target": "Package",
               "version": "[4.3.0, )"
-            },
-            "WebApiContrib.Formatting.Jsonp": {
-              "target": "Package",
-              "version": "[3.0.2, )"
             }
           },
           "imports": [

@@ -9,8 +9,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="~/assets/img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="~/assets/img/favicons/favicon-16x16.png">
     <link rel="shortcut icon" type="image/x-icon" href="~/assets/img/favicons/favicon.ico">
-    <link rel="manifest" href="~/assets/img/favicons/manifest.json">
     <link href="~/assets/css/theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    @*add css for nofactors of grid by shazia on aug 1, 2023*@
+    <link rel="stylesheet" href="~/css/mvc-grid/mvc-grid.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta name="msapplication-TileImage" content="~/assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
@@ -29,9 +31,7 @@
               <li class="nav-item px-2"><a class="nav-link fw-medium" href="#contact">Contact </a></li>
             </ul>
             @*<form class="d-flex">*@
-                    
-                 
-                    <button class="btn btn-lg btn-dark bg-gradient order-0" type="button" onclick="location.href='@Url.Action("Login", "Users")'"> Login </button>
+           <button class="btn btn-lg btn-dark bg-gradient order-0" type="button" onclick="location.href='@Url.Action("Login", "Users")'"> Login </button>
             @*</form>*@
           </div>
         </div>
@@ -117,9 +117,12 @@
             </div>
         </section>
     </footer>
+    @*add js for nofactors of grid by shazia on aug 1, 2023*@
+    <script src="~/js/mvc-grid/mvc-grid.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+   
 </body>
 </html>

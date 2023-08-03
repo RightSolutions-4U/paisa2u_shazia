@@ -17,11 +17,26 @@
                 {
                     <label id="welcomemessage"> @ViewBag.message </label>
                 }
-
-
             </div>
+            <!--Referrals button, Transaction button, Wallet starts here, by Shazia Jul 31..Aug 2, 2023-->
+            <div class="col-md-6 text-right mb-3" style="background-color:#66BB6A">
+                <button type="button" class="btn btn-default" id="Referrals" onclick="CallReferral()">
+                    <span class="glyphicon
+                        glyphicon-search"></span> Referrals
+                </button>
+                <button type="button" class="btn btn-default" id="Transactions" onclick="CallTransactions()">
+                    <span class="glyphicon
+                        glyphicon-search"></span> Transactions
+                </button>
+                <button type="button" class="btn btn-default" id="Wallet" onclick="CallWallet()">
+                    <span class="glyphicon
+                        glyphicon-search"></span> Wallet
+                </button>
+            </div>
+            <!--Referrals button ends here-->
         </div>
         <div class="row align-items-center min-vh-75 min-vh-lg-100">
+            
             <div class="col-md-7 col-lg-6 col-xxl-5 py-6 text-sm-start text-center">
                 <h1 class="mt-6 mb-sm-4 fw-semi-bold lh-sm fs-4 fs-lg-5 fs-xl-6">A New Way to Invest <br class="d-block d-lg-block" />in Agriculture</h1>
                 <p class="mb-4 fs-1">Zou provides farmes, ranchers, private foresters, and agricultural producers with online self service applications and educational materials.</p><a class="btn btn-lg btn-success" href="#" role="button">Invest Now</a>
@@ -48,11 +63,19 @@
                         glyphicon-search"></span> Find
                     </button>
                 </form>
-                
+               @* Added by Shazia for Search, Referrals, Transactions, Wallet from Jul 23..Aug 3, 2023*@
                 @section Scripts {
                 <script type="text/javascript">
+                        function CallReferral() {
+                            location.href = '@Url.Action("GetMyReferrals","Home")';
+                        }
+                        function CallTransactions() {
+                                location.href = '@Url.Action("GetTransactionsWithRegId","Home")';
+                        }
+                       function CallWallet() {
+                                location.href = '@Url.Action("GetWallet","Home")';
+                        }
                     $('#options').change(function() {
-                           // alert('ajax fired');
                            var Option = $('#options'); //vendor/products
                            var MySelect = $('#list1');//list
                             MySelect.empty();
@@ -131,17 +154,14 @@
                                         
                 </script>
                 }
-                
-                
-                
-            </div>
+             </div>
         </div>
         <div class="row flex-center h-100">
             <div class="col-xl-9">
                 <div class="row">
                     
                     <!--Loop -->
-                    @foreach (var i in Model)
+                    @*@foreach (var i in Model)
                     {
                     <div class="col-md-4 mb-5">
                         <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
@@ -154,7 +174,7 @@
                             </div>
                         </div>
                     </div>
-                    }
+                    }*@
                     <!--Loop -->
                     @*<div class="col-md-4 mb-5">
                         <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">

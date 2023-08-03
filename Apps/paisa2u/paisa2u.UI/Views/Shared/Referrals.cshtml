@@ -1,0 +1,56 @@
+﻿@*Added by Shazia on Jul 30, 2023 *@
+@{
+    ViewData["Title"] = "Referrals Page";
+}
+@using GridMvc
+@using GridCore
+@using paisa2u.common.Resources
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<RegUserRegisterResource>
+@using NonFactors.Mvc.Grid;
+
+<section class="py-5" id="Opportuanities">
+   <!--/.bg-holder-->
+
+    <div class="container" style="top: 50px;">
+        <div class="row">
+
+            <div id="welcome" @*style="display:none"*@>
+                @if (@ViewBag.message != null)
+                {
+                    <label id="welcomemessage"> @ViewBag.message </label>
+                }
+            </div>
+        </div>
+        <div class="row align-items-center min-vh-75 min-vh-lg-100">
+            <div class="col-md-7 col-lg-6 col-xxl-5 py-6 text-sm-start text-center">
+
+                <h1 class="mt-6 mb-sm-4 fw-semi-bold lh-sm fs-4 fs-lg-5 fs-xl-6">A New Way to Invest <br class="d-block d-lg-block" />in Agriculture</h1>
+                <p class="mb-4 fs-1">Zou provides farmes, ranchers, private foresters, and agricultural producers with online self service applications and educational materials.</p><a class="btn btn-lg btn-success" href="#" role="button">Invest Now</a>
+            </div>
+        </div>
+    
+    @*<div class="container">*@
+        <div class="row flex-center h-100">
+            <div class="col-md-7">
+                <div class="row">
+                    <h1 style="text-align:center"> My Referrals</h1>
+                    @(
+                        Html.Grid(Model).Build(columns =>
+                            {
+                                columns.Add(model => model.Firstname).Titled("User Name");
+                                columns.Add(model => model.Email).Titled("User Email");
+                                columns.Add(model => model.regid).Titled("Registration ID");
+
+                            }).Sortable().Filterable().Empty("No data Found").Pageable(paper =>
+                            {
+                                paper.CurrentPage = 1;
+                                paper.RowsPerPage = 4;
+                                paper.PagesToDisplay = 5;
+                            })
+                    )
+            </div>
+            </div>
+        </div>
+    </div>
+</section>

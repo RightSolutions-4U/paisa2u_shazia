@@ -307,8 +307,6 @@ C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\ne
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\Humanizer.dll
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\MessagePack.dll
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\MessagePack.Annotations.dll
-C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\System.Net.Http.Formatting.dll
-C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\System.Web.Http.dll
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -404,7 +402,6 @@ C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\ne
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\System.Windows.Extensions.dll
-C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\WebApiContrib.Formatting.Jsonp.dll
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\af\Humanizer.resources.dll
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\ar\Humanizer.resources.dll
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\az\Humanizer.resources.dll

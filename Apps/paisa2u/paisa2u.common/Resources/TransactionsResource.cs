@@ -5,9 +5,10 @@ namespace paisa2u.common.Resources
     (
         int tranid,
         int regId,
-        float amount,
+        double amount,
         DateTime endate,
-        string enuser
+        string enuser,
+        string drcrid
     );
 
 }

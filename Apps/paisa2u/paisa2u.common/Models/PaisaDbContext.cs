@@ -40,7 +40,7 @@ public partial class PaisaDbContext : DbContext
     public virtual DbSet<VendorProduct> VendorProducts { get; set; }
 
     //Added by Mohtashim 03-07-2023
-    public virtual DbSet<Transactins> Transactins { get; set; }
+    public virtual DbSet<transactions> Transactins { get; set; }
 
     public virtual DbSet<ProductByVendor> GetProductByVendor { get; set; }
 
@@ -378,7 +378,7 @@ public partial class PaisaDbContext : DbContext
         });
 
         //Added by Mohtashim on 03-07-2023
-        modelBuilder.Entity<Transactins>(entity =>
+        modelBuilder.Entity<transactions>(entity =>
         {
             entity.HasKey(e => e.Tranid).HasName("PRIMARY");
 

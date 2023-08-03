@@ -694,38 +694,6 @@
       "MessagePackAnalyzer/2.1.152": {
         "type": "package"
       },
-      "Microsoft.AspNet.WebApi.Client/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "4.5.11"
-        },
-        "compile": {
-          "lib/net45/System.Net.Http.Formatting.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/System.Net.Http.Formatting.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.AspNet.WebApi.Core/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Http.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/System.Web.Http.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.18": {
         "type": "package",
         "dependencies": {
@@ -4430,22 +4398,6 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "WebApiContrib.Formatting.Jsonp/3.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Core": "5.0.0"
-        },
-        "compile": {
-          "lib/net45/WebApiContrib.Formatting.Jsonp.dll": {
-            "related": ".pdb"
-          }
-        },
-        "runtime": {
-          "lib/net45/WebApiContrib.Formatting.Jsonp.dll": {
-            "related": ".pdb"
-          }
-        }
-      },
       "paisa2u.common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -5310,35 +5262,6 @@
         "messagepackanalyzer.nuspec",
         "tools/install.ps1",
         "tools/uninstall.ps1"
-      ]
-    },
-    "Microsoft.AspNet.WebApi.Client/5.0.0": {
-      "sha512": "OMTp9ot40TZgZxnFO+S0ac0EY5CtQs6KTHkMSHmNFDc+a0tWMCsSBuOG6HoH9+G95wNhEfZrZ20btAsHMlQe7w==",
-      "type": "package",
-      "path": "microsoft.aspnet.webapi.client/5.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/System.Net.Http.Formatting.dll",
-        "lib/net45/System.Net.Http.Formatting.xml",
-        "lib/portable-wp8+netcore45+net45/System.Net.Http.Formatting.dll",
-        "lib/portable-wp8+netcore45+net45/System.Net.Http.Formatting.xml",
-        "microsoft.aspnet.webapi.client.5.0.0.nupkg.sha512",
-        "microsoft.aspnet.webapi.client.nuspec"
-      ]
-    },
-    "Microsoft.AspNet.WebApi.Core/5.0.0": {
-      "sha512": "ZOVLLtFpSM8nkJopUM9upbJEUkAUS60j6Sj1hDKewHaekWMUnnoMX/i3Ee+7KgxMGk13yxxQRHtSwcjh1JpJ4w==",
-      "type": "package",
-      "path": "microsoft.aspnet.webapi.core/5.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "content/web.config.transform",
-        "lib/net45/System.Web.Http.dll",
-        "lib/net45/System.Web.Http.xml",
-        "microsoft.aspnet.webapi.core.5.0.0.nupkg.sha512",
-        "microsoft.aspnet.webapi.core.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.18": {
@@ -12616,19 +12539,6 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "WebApiContrib.Formatting.Jsonp/3.0.2": {
-      "sha512": "vSG7c7ms1I5f+ZVhZio19shWeSrQlWnlxO9yP0daD3xxbuB5PR9lYux9Az7WlHaTWCGDDgY6ysELft+wpBLKIw==",
-      "type": "package",
-      "path": "webapicontrib.formatting.jsonp/3.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/WebApiContrib.Formatting.Jsonp.dll",
-        "lib/net45/WebApiContrib.Formatting.Jsonp.pdb",
-        "webapicontrib.formatting.jsonp.3.0.2.nupkg.sha512",
-        "webapicontrib.formatting.jsonp.nuspec"
-      ]
-    },
     "paisa2u.common/1.0.0": {
       "type": "project",
       "path": "../paisa2u.common/paisa2u.common.csproj",
@@ -12649,7 +12559,6 @@
       "Swashbuckle.AspNetCore >= 6.5.0",
       "System.IdentityModel.Tokens.Jwt >= 6.31.0",
       "System.Security.Claims >= 4.3.0",
-      "WebApiContrib.Formatting.Jsonp >= 3.0.2",
       "paisa2u.common >= 1.0.0"
     ]
   },
@@ -12754,10 +12663,6 @@
           "System.Security.Claims": {
             "target": "Package",
             "version": "[4.3.0, )"
-          },
-          "WebApiContrib.Formatting.Jsonp": {
-            "target": "Package",
-            "version": "[3.0.2, )"
           }
         },
         "imports": [
@@ -12782,37 +12687,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.WebApi.Client 5.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.AspNet.WebApi.Client",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.WebApi.Core 5.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.AspNet.WebApi.Core",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'WebApiContrib.Formatting.Jsonp 3.0.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "WebApiContrib.Formatting.Jsonp",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

@@ -4,7 +4,7 @@ using paisa2u.common.Models;
 using paisa2u.common.Services;
 using Serilog;
 using System.Configuration;
-using WebApiContrib.Formatting.Jsonp;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +33,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IAddressService, AddressService>();
 builder.Services.AddScoped<ISubscriptionService, SubscriptionService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ITransactionsService, TransactionsService>();
 
 
 Log.Logger=new LoggerConfiguration().WriteTo.File("C:\\users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\Logs\\log*.log", rollingInterval:RollingInterval.Day).CreateLogger();

@@ -21,7 +21,6 @@ namespace paisa2u.UI.Controllers
             //On valid user it will go to home screen
             Users user = new Users();
             user.Email = collection["gr_login_email"];
-            /*user.Username = "";*/
             user.Pwd = collection["gr_login_password"];
             
 
@@ -41,13 +40,18 @@ namespace paisa2u.UI.Controllers
                     Response.Cookies.Append("userid", a.RegId.ToString(), option);
                     
                 }
-                if(a.Username==null)
+                //changed username to Email by Shazia Jul 31, 2023 and added TempData
+                if(a.Email == null)
                 {
                     ViewBag.message = "Invalid Email or Password";
                 }
                 else
                 {
                     ViewBag.message = "Welcome " + a.Username;
+                    TempData["RegId"] = a.RegId;
+                    TempData["Username"] = a.Username;
+                 
+
                 }
                 
                 return View("../Home/Index");
