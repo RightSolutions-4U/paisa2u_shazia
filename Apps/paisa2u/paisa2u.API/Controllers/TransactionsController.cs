@@ -33,6 +33,7 @@ namespace paisa2u.API.Controllers
             }
 
         }
+        //Added by Shazia on Aug 1, 2023
         // GET: api/Transactions
         [HttpGet("GetTransactionsWithRegId")]
         public async Task<ActionResult<IEnumerable<TransactionsResource>>> GetTransactionsWithRegId(int RegId, CancellationToken cancellationToken)
@@ -43,6 +44,7 @@ namespace paisa2u.API.Controllers
             return Ok(jsonString);
 
         }
+        //Added by Shazia on Aug 1, 2023
         // GET: api/Transactions
         [HttpGet("GetTransactions")]
         public async Task<ActionResult<IEnumerable<TransactionsResource>>> GetTransactions(CancellationToken cancellationToken)
@@ -53,17 +55,19 @@ namespace paisa2u.API.Controllers
             return Ok(jsonString);
 
         }
+        //Added by Shazia on Aug 1, 2023
         // GET: api/Transactions
         [HttpGet("GetTransaction")]
         public async Task<ActionResult<IEnumerable<TransactionsResource>>> GetTransaction(int Tranid, CancellationToken cancellationToken)
 
         {
             var a = await _transactionsService.GetTransaction(Tranid, cancellationToken);
-            //var jsonString = JsonSerializer.Serialize(a);
-            //return Ok(jsonString);
-            return Ok(a);
+            var jsonString = JsonSerializer.Serialize(a);
+            return Ok(jsonString);
+           
 
         }
+        //Added by Shazia on Aug 2, 2023
         // GET: api/Transactions
         [HttpGet("GetWallet")]
         public ActionResult GetWallet(int RegId, CancellationToken cancellationToken)

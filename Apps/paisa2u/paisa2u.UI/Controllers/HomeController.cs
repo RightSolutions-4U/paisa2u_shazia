@@ -35,6 +35,7 @@ namespace paisa2u.UI.Controllers
 
             }
         }
+        //by Shazia on Aug 2, 2023
         //GetMyReferrals
         public async Task<ActionResult> GetMyReferrals(IFormCollection collection)
         {
@@ -53,7 +54,8 @@ namespace paisa2u.UI.Controllers
                     return View("../Shared/Referrals", a);
                 }
         }
-        //GetMyTransactions
+        //by Shazia on Aug 2, 2023
+        //GetTransactionsWithRegId
         public async Task<ActionResult> GetTransactionsWithRegId(IFormCollection collection)
         {
             var client1 = new HttpClient();
@@ -71,6 +73,7 @@ namespace paisa2u.UI.Controllers
                 return View("../Shared/Transactions", a);
             }
         }
+        //by Shazia on Aug 2, 2023
         //GetWallet
         public async Task<ActionResult> GetWallet(IFormCollection collection)
         {
@@ -89,6 +92,7 @@ namespace paisa2u.UI.Controllers
                 return View("../Shared/Wallet");
             }
         }
+        //by Shazia on Jul 29-Jul 31, 2023
         public async Task<ActionResult> GetSearch(IFormCollection collection)
         {
             var select = collection["list1"]; //ID or All

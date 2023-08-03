@@ -19,6 +19,7 @@ namespace paisa2u.API.Controllers
         {
             _vendorService = vendorService;
         }
+        //Added by Shazia on JUl 23- jul 31, 2023 all functions
         [HttpGet("GetSingleProductByVendor")]
         public async Task<IEnumerable<ProductByVendor>> GetSingleProductByVendor(CancellationToken cancellationToken)
         {
