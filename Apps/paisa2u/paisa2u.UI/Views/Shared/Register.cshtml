@@ -1,0 +1,155 @@
+﻿
+
+<div class="container" style="top: 100px;">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8 align-items-md-center" style=" display: flex;justify-content: center;">
+            <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
+                <div class="text-center text-md-start card-hover">
+                    <div class="card-body">
+                        <header class="text-center mb-4">
+                            <h2 class="h2 g-color-black g-font-weight-400 trn" data-trn="Register">Register User</h2>
+                        </header>
+                        <!-- Form -->
+                        <form class="g-py-15" id="gr_log_in_form" action="/Users/RegisterUser" method="post">
+                            <div class="col-md-6 con-left">
+                                <div class="form-group mb-4" style="text-align:left">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="firstname" for="gr_register_FirstName">First Name <span class="fw-color-red">*</span>:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_your_firstname" id="gr_register_FirstName" name="gr_register_FirstName" type="text" placeholder="Enter your first name">
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="middlename" for="gr_register_MiddleName">Middle Name <span class="fw-color-red">*</span>:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_your_middlename" id="gr_register_MiddleName" name="gr_register_MiddleName" type="text" placeholder="Enter your middle name">
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="lastname" for="gr_register_LastName">Last Name <span class="fw-color-red">*</span>:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_your_lastname" id="gr_register_LastName" name="gr_register_LastName" type="text" placeholder="Enter your last name">
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="email" for="gr_register_email">Email <span class="fw-color-red">*</span>:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_your_email" id="gr_register_Email" name="gr_register_Email" type="email" placeholder="Enter your email address">
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="username" for="gr_register_email">User name <span class="fw-color-red">*</span>:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_your_username" id="gr_register_UserName" name="gr_register_UserName" type="text" placeholder="Enter your Username">
+                                </div>
+                                <div class="col align-self-center">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="password" for="gr_register_password">Password <span class="fw-color-red">*</span>:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 mb-3 trn" data-trn-placeholder="enter_your_password" id="gr_register_password" name="gr_register_password" type="password" placeholder="Enter your password">
+                                </div>
+                            </div>
+                            <div class="col-md-6 con-right">
+                                <div class="form-group mb-4">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="phonenumber" for="gr_register_FirstName">Phone# <span class="fw-color-red">*</span>:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_your_phone#" id="gr_register_PhoneNumber" name="gr_register_PhoneNumber" type="text" placeholder="Enter your Phone Number">
+                                </div>
+                                
+                                <div class="form-group mb-4">
+                                    <label class="my-2">Referred By</label>
+                                    <select data-trn="Referredby" id="Referredby" name="Referredby"  >
+                                            <option value="0">Referred By</option>
+                                        </select>
+                                                </div>
+                                <div class="form-group mb-4">
+                                        <label class="my-2">Subscription Type</label>
+                                            <select data-trn="Substype" class="select" id="Substype" name="Substype">
+                                               <option value="G">Gold</option>
+                                               <option value="D">Diamond</option>
+                                               <option value="P">Platinum</option>
+                                            </select>
+                                </div>
+                                <div class="form-group mb-4">
+                                        <label class="my-2">Registration Type</label>
+                                        <select id="Regtype" name="Regtype">
+                                            <option value="V">Vendor</option>
+                                            <option value="S">SubVendor</option>
+                                            <option value="O">Owner</option>
+                                            <option value="C">Customer</option>
+                                         </select>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="my-2">Vendor Type</label>
+                                    <select id="Vendortype" name="Vendortype">
+                                        <option value="I">Internal</option>
+                                        <option value="E">External</option>
+                                    </select>
+                                </div>
+                            @*    <div class="form-group mb-4">
+                                    <label class="my-2">Auto Renewal</label>
+                                    <select id="Autorenewal" name="Autorenewal">
+                                        <option value="Y">Yes</option>
+                                        <option value="N">No</option>
+                                    </select>
+                                </div>*@
+                                <div class="form-group mb-4">
+                                    <label class="my-2">Registration Status</label>
+                                    <select id="Regstatus" name="Regstatus">
+                                        <option value="Y">Yes</option>
+                                        <option value="N">No</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="Qrpicture" for="gr_register_Qrpicture">Qrpicture <span class="fw-color-red">*</span>:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_Qr_Code" id="gr_register_QrPicture" name="QrPicture" type="text" placeholder="Enter your Qr Code">
+                                </div>
+                            
+                            </div>
+                                <div class="row justify-content-between">
+                                    <div class="col-md-4 col-sm-12 align-self-center mb-4">
+                                        <button id="gr_log_in" class="btn btn-lg btn-success rounded g-py-13 g-px-25 trn gr_spinner_btn" data-trn="register" type="submit">
+                                            Register
+                                            <span class="spinner"></span>
+                                        </button>
+                                    </div>
+                                    <div class="col-12 align-self-center mb-4">
+                                        <a class="d-inline-block g-font-size-12 mb-2 trn" data-trn="forgot_password" href="#" id="gr_forgot_password_link">Forgot password?</a>
+                                    </div>
+                                    <div class="col-12 align-self-center mb-7">
+                                        If you are not registered <a class="d-inline-block g-font-size-12 mb-2 trn" data-trn="register" href="#" id="gr_register">click here!</a>
+                                    </div>
+                                </div>
+                            @*<script type="text/javascript">
+                                $(document).ready(function () {
+                                    alert("entered in function");
+                                    var Option = $('#Referredby'); //Referred By
+                                    Option.empty();
+                                    alert('entered1');
+                                    $.ajax({
+                                    type: "GET",
+                                    url: "https://localhost:7172/api/Users/GetRegUsers",
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "json",
+                                    success: function (data) {
+                                        alert(JSON.stringify(data));
+                                            Option.append("<option value='" + "0" + "'>" + "ReferredBy" + "</option>");
+                                        $.each(data, function (index, response) {
+                                            Option.append("<option value='" + response.regid + "'>" + response.firstname + "</option>");
+                                        }); //each
+                                    },
+                                    failure: function (data) {
+                                        alert('failure');
+                                        alert(data.responseText);
+                                    },
+                                    error: function (xhr, ajaxOptions, thrownError) {
+                                        alert(xhr.status);
+                                        alert(thrownError);
+                                    } //error
+                                });//ajax closure
+                            });
+                           </script>*@
+                            
+                        </form>
+                        
+                        <!-- End Form -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-2">
+        </div>
+       
+
+    </div>
+</div>

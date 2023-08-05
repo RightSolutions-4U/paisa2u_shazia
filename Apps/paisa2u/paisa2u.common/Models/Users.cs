@@ -19,7 +19,7 @@ public partial class Users
 
     public string Pwd { get; set; } = null!;
 
-    public string? Referredby { get; set; }
+    public string? Referredby { get; set; } 
 
     public string Regtype { get; set; } = null!;
 
@@ -38,8 +38,8 @@ public partial class Users
     public bool Autorenewal { get; set; }
 
     public string? Qrpicture { get; set; }
-    public string? PasswordSalt { get; set; }
-    public string? PasswordHash { get; set; }
+    public string? PasswordSalt { get; set; } 
+    public string? PasswordHash { get; set; } 
 
     public virtual ICollection<Address> Addresses { get; set; } = new List<Address>();
 

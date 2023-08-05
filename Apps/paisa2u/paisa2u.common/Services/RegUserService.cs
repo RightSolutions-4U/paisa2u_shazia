@@ -21,7 +21,7 @@ namespace paisa2u.common.Services
             configuration = iConfig;
         }
 
-        public async Task<RegUserResource> Registeration(RegUserRegisterResource resource, CancellationToken cancellationToken)
+        public async Task<RegUserResource> Registration(RegUserRegisterResource resource, CancellationToken cancellationToken)
         {
             var user = new Users
             {

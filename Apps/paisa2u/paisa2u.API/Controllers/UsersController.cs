@@ -19,12 +19,12 @@ namespace paisa2u.API.Controllers
             _vendorService = vendorService;
         }
 
-        [HttpPost("register")]
+        [HttpPost("Register")]
         public async Task<IActionResult> Register([FromBody] RegUserRegisterResource resource, CancellationToken cancellationToken)
         {
             try
             {
-                var response = await _reguserService.Registeration(resource, cancellationToken);
+                var response = await _reguserService.Registration(resource, cancellationToken);
                 //Add record to vendor table
                 if(response.Vendortype == "V")
                 {
