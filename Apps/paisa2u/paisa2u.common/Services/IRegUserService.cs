@@ -5,6 +5,7 @@ namespace paisa2u.common.Services
 {
     public interface IRegUserService
     {
+        //Added by Shazia Aug 4, 2023 for registration-renamed it
         Task<RegUserResource> Registration(RegUserRegisterResource resource, CancellationToken cancellationToken);
         Task<RegUserResource> Login(UserLoginResource resource, CancellationToken cancellationToken);
 

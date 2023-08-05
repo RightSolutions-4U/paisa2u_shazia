@@ -54,8 +54,8 @@ namespace paisa2u.UI.Controllers
                 
                 return View("../Home/Index");
             }
-         }
-
+        }
+        //Added by Shazia Aug 4, 2023 for registration
         public ActionResult Register()
         {
             return View("Register");

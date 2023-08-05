@@ -20,7 +20,7 @@ namespace paisa2u.common.Services
             /*this.configuration = configuration;*/
             configuration = iConfig;
         }
-
+        //Added by Shazia Aug 4, 2023 for registration
         public async Task<RegUserResource> Registration(RegUserRegisterResource resource, CancellationToken cancellationToken)
         {
             var user = new Users

@@ -18,7 +18,7 @@ namespace paisa2u.API.Controllers
             _reguserService = reguserService;
             _vendorService = vendorService;
         }
-
+        //Added by Shazia Aug 4, 2023 for registration
         [HttpPost("Register")]
         public async Task<IActionResult> Register([FromBody] RegUserRegisterResource resource, CancellationToken cancellationToken)
         {
