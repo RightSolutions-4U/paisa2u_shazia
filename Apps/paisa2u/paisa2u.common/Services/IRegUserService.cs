@@ -8,6 +8,7 @@ namespace paisa2u.common.Services
         //Added by Shazia Aug 4, 2023 for registration-renamed it
         Task<RegUserResource> Registration(RegUserRegisterResource resource, CancellationToken cancellationToken);
         Task<RegUserResource> Login(UserLoginResource resource, CancellationToken cancellationToken);
+        Task<RegUserResource> Login_check_email(UserLoginResource resource, CancellationToken cancellationToken);
 
         Task<List<RegUserResource>> GetRegUsers(CancellationToken cancellationToken);
 

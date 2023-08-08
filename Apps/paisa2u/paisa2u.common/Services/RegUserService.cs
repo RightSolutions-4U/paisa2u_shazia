@@ -109,10 +109,38 @@ namespace paisa2u.common.Services
                 user.PasswordSalt
                 );
         }
+        public async Task<RegUserResource> Login_check_email(UserLoginResource resource, CancellationToken cancellationToken)
+        {
+            var user = await _context.Users
+                .FirstOrDefaultAsync(x => x.Email == resource.Email, cancellationToken);
 
-       
+            if (user == null)
+                throw new Exception("Email or password did not match.");
 
-       public async Task<List<RegUserResource>> GetRegUsers(CancellationToken cancellationToken)
+            return new RegUserResource(
+                user.RegId,
+                user.Firstname,
+                user.Middlename,
+                user.Lastname,
+                user.Email,
+                user.Username,
+                "",
+                user.Referredby,
+                user.Regtype,
+                user.Vendortype,
+                user.Phonenumber,
+                user.Endate,
+                user.Enuser,
+                user.Substype,
+                user.Regstatus,
+                user.Autorenewal,
+                user.Qrpicture,
+                user.PasswordHash,
+                user.PasswordSalt
+                );
+        }
+
+        public async Task<List<RegUserResource>> GetRegUsers(CancellationToken cancellationToken)
         {
             List<RegUserResource> userslist = new List<RegUserResource>();
             var users1 = await _context.Users.ToListAsync(cancellationToken);

@@ -57,6 +57,19 @@ namespace paisa2u.API.Controllers
                 return BadRequest(new { ErrorMessage = e.Message });
             }
         }
+        [HttpPost("Login_check_email")]
+        public async Task<IActionResult> Login_check_email([FromBody] UserLoginResource resource, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var response = await _reguserService.Login_check_email(resource, cancellationToken);
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { ErrorMessage = e.Message });
+            }
+        }
 
         ////* GetRegUsers
         [HttpGet("GetRegUsers")]

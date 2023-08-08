@@ -577,3 +577,17 @@ C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\obj\Debug\ne
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\obj\Debug\net6.0\paisa2u.API.pdb
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\obj\Debug\net6.0\paisa2u.API.genruntimeconfig.cache
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\obj\Debug\net6.0\ref\paisa2u.API.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\MailKit.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\MimeKit.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\NETCore.MailKit.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
