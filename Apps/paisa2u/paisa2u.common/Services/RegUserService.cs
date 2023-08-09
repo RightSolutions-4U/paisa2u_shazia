@@ -30,7 +30,8 @@ namespace paisa2u.common.Services
                 Lastname = resource.Lastname,
                 Email = resource.Email,
                 Username = resource.Username,
-                Pwd = resource.Pwd,
+                //Pwd = resource.Pwd, don't save password
+                Pwd = "",
                 Referredby = resource.Referredby,
                 Regtype = resource.Regtype,
                 Vendortype = resource.Vendortype,
@@ -205,8 +206,7 @@ namespace paisa2u.common.Services
                 );
 
         }
-
-        public async Task<RegUserResource> UpdateRegUser(int id, RegUserResource user, CancellationToken cancellationToken)
+         public async Task<RegUserResource> UpdateRegUser(int id, RegUserResource user, CancellationToken cancellationToken)
         {
             var eduser = await _context.Users
                 .FirstOrDefaultAsync(x => x.RegId == id, cancellationToken);
@@ -215,10 +215,23 @@ namespace paisa2u.common.Services
                 throw new Exception("User to update does not exist");
             }
             //All fields to be added here
+            eduser.RegId = user.Regid;
             eduser.Firstname = user.Firstname;
             eduser.Middlename = user.Middlename;
             eduser.Email = user.Email;
-            
+            eduser.Lastname = user.Lastname;
+            eduser.Username = user.Username;
+            eduser.Referredby = user.Referredby;
+            eduser.Regstatus = user.Regstatus;
+            eduser.Phonenumber = user.Phonenumber;
+            eduser.Endate = user.Endate;
+            eduser.Enuser = user.Enuser;
+            eduser.Substype = user.Substype;
+            eduser.Autorenewal = user.Autorenewal;
+            eduser.PasswordHash = user.PasswordHash;
+            eduser.PasswordSalt = user.PasswordSalt;
+            eduser.Regtype = user.Regtype;
+            eduser.Vendortype = user.Vendortype;
             _context.Entry(eduser).State = EntityState.Modified;
 
             
@@ -249,8 +262,8 @@ namespace paisa2u.common.Services
                 user.Regstatus,
                 user.Autorenewal,
                 user.Qrpicture,
-                "",
-                ""
+                user.PasswordHash,
+                user.PasswordSalt
                 );
         }
 
@@ -280,7 +293,7 @@ namespace paisa2u.common.Services
                 user.Regstatus,
                 user.Autorenewal,
                 user.Qrpicture,
-                "",
+                user.PasswordHash,
                 ""
                 );
             _context.Entry(user).State = EntityState.Deleted;

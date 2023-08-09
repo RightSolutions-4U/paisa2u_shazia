@@ -33,29 +33,7 @@ namespace paisa2u.UI.Controllers
             return View("Login");
         }
 
-        //[HttpPost]
-        //[AllowAnonymous]
-        //public async Task<ActionResult<Users>> ForgotPassword(IFormCollection collection)
-        //{
-
-        //        // Find the user by email
-        //     var user = await _userManager.FindByEmailAsync(collection["gr_register_Email"]);
-        //    // If the user is found AND Email is confirmed
-        //    if (user != null && await _userManager.IsEmailConfirmedAsync(user))
-        //    {
-        //        // Generate the reset password token
-        //        var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-
-        //        var callback = Url.Action(nameof(ResetPassword), "Users", new { token, email = user.Email }, Request.Scheme);
-        //        var message = new Message(new string[] { user.Email }, "Reset password token", callback);
-        //        await _emailSender.SendEmailAsync(message);
-        //    }
-        //    return RedirectToAction(nameof(ForgotPasswordSendEmail));
-        //    //return View("ForgotPassword");
-        //}
-
         [HttpPost]
-        
         public async Task<ActionResult<Users>> ForgotPassword(IFormCollection collection)
         {
             Users user = new Users();
@@ -84,28 +62,7 @@ namespace paisa2u.UI.Controllers
             return View();
         }
 
-       // [HttpPost]
-       //// [ValidateAntiForgeryToken]
-       // public async Task<IActionResult> ResetPassword_1(ResetPassword resetPasswordModel)
-       // {
-       //     if (!ModelState.IsValid)
-       //         return View("ResetPassword");
-       //         var user = await _userManager.FindByEmailAsync(resetPasswordModel.Email);
-       //     if (user == null)
-       //         //RedirectToAction(nameof(ResetPasswordConfirmation));
-       //         return View("Reset Password");
-       //             var resetPassResult = await _userManager.ResetPasswordAsync(user, resetPasswordModel.Token, resetPasswordModel.Password);
-       //             if (!resetPassResult.Succeeded)
-       //             {
-       //                 foreach (var error in resetPassResult.Errors)
-       //                 {
-       //                     ModelState.TryAddModelError(error.Code, error.Description);
-       //                 }
-       //                 return View();
-       //             }
-       //            // return RedirectToAction(nameof(ResetPasswordConfirmation));
-       //               return View("ResetPasswordConfirmation");
-       // }
+      
 
         [HttpPost]
         public async Task<ActionResult<Users>> CheckLogin(IFormCollection collection)
@@ -148,7 +105,7 @@ namespace paisa2u.UI.Controllers
                 return View("../Home/Index");
             }
         }
-        [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> ResetThePassword(IFormCollection collection)
         {
             //Code to check valid user
@@ -159,6 +116,7 @@ namespace paisa2u.UI.Controllers
             {
                 Users user = new Users();
                 user.Email = collection["email"];
+                user.Pwd = "abc";
                 StringContent content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
                 var client = new HttpClient();
                 client.DefaultRequestHeaders.Clear();
@@ -191,19 +149,21 @@ namespace paisa2u.UI.Controllers
                     salt,
                     PasswordHash
                     );
-                
-                    //return RedirectToAction(nameof(ForgotPasswordSendEmail));
+                    var client2 = new HttpClient();
+                    client2.DefaultRequestHeaders.Clear();
                     StringContent content2 = new StringContent(JsonConvert.SerializeObject(RegUser), Encoding.UTF8, "application/json");
-                    var response_update = await client.PostAsync("https://localhost:7172/api/Users/UpdateRegUser", content2);
-                                
-                    
+                    using (var response_update = await client2.PostAsync("https://localhost:7172/api/Users/UpdateRegUser", content2))
+                    {
+                        string apiResponse_update = await response_update.Content.ReadAsStringAsync();
+                        var a_update = JsonConvert.DeserializeObject<RegUserResource>(apiResponse);
+                    }
 
                 }
                 return View("ResetPasswordConfirmation");
                 
 
             }
-            return View("ResetPasswordConfirmation");
+            return View("ForgotPassword"); //for checking
         }
         //Added by Shazia Aug 4, 2023 for registration
         public ActionResult Register()

@@ -104,7 +104,7 @@ namespace paisa2u.API.Controllers
             }
         }
 
-        [HttpPut("UpdateRegUser")]
+        [HttpPost("UpdateRegUser")]
         public async Task<IActionResult> UpdateRegUser([FromBody] RegUserResource resource, CancellationToken cancellationToken)
         {
             try
