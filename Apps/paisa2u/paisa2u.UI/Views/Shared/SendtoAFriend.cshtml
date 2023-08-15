@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Search Page";
+}
+@using paisa2u.common.Models
+
+<section class="py-5" id="SendToAFriend">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 mx-auto text-right mb-3" style="background-color:#66BB6A">
+                <label class="fw-medium" style="color:white;font-weight:300;">Search by:</label>
+
+
+            </div>
+        </div>
+        <div class="row flex-center h-100">
+            <div class="col-xl-9">
+                <div class="row">
+                    <form class="g-py-15" id="gr_log_in_form" action="/Users/SendtoAfriend" method="post">
+                    <div class="row justify-content-between">
+                        <div class="col align-self-center">
+                            <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="email" for="email">email <span class="fw-color-red">*</span>:</label>
+                        </div>
+                    </div>
+                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 mb-3 trn" data-trn-placeholder="enter_your_password" id="email" name="email" type="email" placeholder="Enter your Email Address">
+
+                    <div class="row justify-content-between">
+                        <div class="col-md-4 col-sm-12 align-self-center mb-4">
+                            <button id="gr_log_in" class="btn btn-lg btn-success rounded g-py-13 g-px-25 trn gr_spinner_btn" data-trn="send" type="submit">
+                                Submit
+                                <span class="spinner"></span>
+                            </button>
+                        </div>
+                    </div>
+                   </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

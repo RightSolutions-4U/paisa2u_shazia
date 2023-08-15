@@ -44,19 +44,19 @@ namespace paisa2u.common.Services
 
         public async Task<UserResource> Login(LoginResource resource, CancellationToken cancellationToken)
         {
-            var user = await _context.Siteusers
-                .FirstOrDefaultAsync(x => x.Email == resource.Username, cancellationToken);
+            var siteuser = await _context.Siteusers
+                .FirstOrDefaultAsync(x => x.Email == resource.Email, cancellationToken);
 
-            if (user == null)
-                throw new Exception("Username or password did not match.");
+            if (siteuser == null)
+                throw new Exception("User does not exist.");
 
-            var passwordHash = PasswordHasher.ComputeHash(resource.Password, user.PasswordSalt, _pepper, _iteration);
-            if (user.PasswordHash != passwordHash)
+            var passwordHash = PasswordHasher.ComputeHash(resource.Pwd, siteuser.PasswordSalt, _pepper, _iteration);
+            if (siteuser.PasswordHash != passwordHash)
                 throw new Exception("Username or password did not match.");
 
             //Add JWT Token Code
             var claims = new[] {
-                        new Claim(JwtRegisteredClaimNames.Sub, user.Username),
+                        new Claim(JwtRegisteredClaimNames.Sub, siteuser.Username),
                         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                         new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString())
                         /*new Claim("UserId", user.UserId.ToString()),
@@ -74,8 +74,8 @@ namespace paisa2u.common.Services
                 claims,
                 expires: DateTime.UtcNow.AddMinutes(10),
                 signingCredentials: signIn);
-            user.JwtToken = new JwtSecurityTokenHandler().WriteToken(token);
-            return new UserResource(user.Username, user.Email, "*", user.Adminrole,user.JwtToken );
+            siteuser.JwtToken = new JwtSecurityTokenHandler().WriteToken(token);
+            return new UserResource(siteuser.Username, siteuser.Email, "*", siteuser.Adminrole, siteuser.JwtToken );
         }
     }
 

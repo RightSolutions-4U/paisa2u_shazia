@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "";
+}
+<section class="py-5" id="Opportuanities">
+
+    <div class="container" style="top: 5px;">
+ 
+        <div class="row align-items-center min-vh-75 min-vh-lg-100">
+            <div class="col-md-7 col-lg-6 col-xxl-5 py-6 text-sm-start text-center">
+
+                <h1 class="mt-6 mb-sm-4 fw-semi-bold lh-sm fs-4 fs-lg-5 fs-xl-6">Welcome to Admin module</h1>
+                    @Html.ActionLink("clickmeGetPercentUsers","GetSubsPercentAll", "Admin")
+                    <div class="row"></div>
+                    @Html.ActionLink("clickmeAddPercent","AddSubsPercent", "Admin")
+                <div class="row"></div>
+                @Html.ActionLink("clickmegetpercentbyRegId","GetSubsPercentByRegId", "Admin")
+                <div class="row"></div>
+                @Html.ActionLink("clickmeGetPercentAll","GetSubsPercentAllSubs", "Admin")
+
+             </div>
+        </div>
+    </div>
+ 
+</section>
+

@@ -10,19 +10,6 @@ using System.Configuration;
 
 
 var builder = WebApplication.CreateBuilder(args);
-////Added by Shazia for email on Aug 6, 2023
-//var emailConfig = builder.Configuration
-//        .GetSection("EmailConfiguration")
-//        .Get<EmailConfiguration>();
-
-//// Add services to the container.
-//// Added by Shazia for email on Aug 6, 2023
-//builder.Services.AddSingleton(emailConfig);
-//builder.Services.AddScoped<IEmailSender, EmailSender>();
-
-// chagnes  end here
-//builder.Services.AddIdentity<Users, IdentityRole>().AddEntityFrameworkStores<PaisaDbContext>().AddDefaultTokenProviders();
-//builder.Services.Configure<DataProtectionTokenProviderOptions>(opts => opts.TokenLifespan = TimeSpan.FromHours(24));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

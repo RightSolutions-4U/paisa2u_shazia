@@ -8,9 +8,12 @@
     ".NETCoreApp,Version=v6.0": {
       "paisa2u.UI/1.0.0": {
         "dependencies": {
+          "GridCore": "6.0.4",
           "GridMvcCore": "6.0.4",
+          "GridShared": "6.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.9",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.15",
+          "NonFactors.Grid.Core.Mvc6": "7.2.0",
           "NonFactors.Grid.Mvc6": "7.2.0",
           "paisa2u.common": "1.0.0"
         },

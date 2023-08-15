@@ -54,6 +54,13 @@ namespace paisa2u.UI.Controllers
                     return View("../Shared/Referrals", a);
                 }
         }
+
+        //by shazia on aug 14
+        //Added by Shazia Aug 14, 2023 for invite
+        public ActionResult Invite()
+        {
+            return View("SendToAFriend");
+        }
         //by Shazia on Aug 2, 2023
         //GetTransactionsWithRegId
         public async Task<ActionResult> GetTransactionsWithRegId(IFormCollection collection)

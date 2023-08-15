@@ -7,6 +7,8 @@ using System.Threading;
 
 namespace paisa2u.API.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class SubscriptionpercsController : ControllerBase
     {
         private readonly ISubscriptionService _subscriptionService;
@@ -16,14 +18,14 @@ namespace paisa2u.API.Controllers
             _subscriptionService = subscriptionService;
         }
 
-        // GET: Subscriptionpercs/Get/5
-        [HttpGet("GetSubsPercent")]
-        public async Task<ActionResult<SubscriptionResource>> GetSubsPercent(int id, CancellationToken cancellationToken)
+        
+        [HttpGet("GetSubsPercentByRegId")]
+        public async Task<ActionResult<SubscriptionResource>> GetSubsPercentByRegId(int RegId, CancellationToken cancellationToken)
         {
 
             try
             {
-                var response = await _subscriptionService.GetSubsPercent(id, cancellationToken);
+                var response = await _subscriptionService.GetSubsPercentByRegId(RegId, cancellationToken);
                 return Ok(response);
             }
             catch (Exception e)
@@ -32,13 +34,69 @@ namespace paisa2u.API.Controllers
             }
 
         }
-        // Post: api/Subscriptionpercs
+        
+        [HttpPost("GetSubsPercentAll")]
+        public async Task<ActionResult<RegUserResource>> GetSubsPercentAll(CancellationToken cancellationToken)
+        {
+
+            try
+            {
+                var response = await _subscriptionService.GetSubsPercentAll(cancellationToken);
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { ErrorMessage = e.Message });
+            }
+
+        }
+        [HttpPost("GetSubsPercentAllSubs")]
+        public async Task<ActionResult<SubscriptionResource>> GetSubsPercentAllSubs(CancellationToken cancellationToken)
+        {
+
+            try
+            {
+                var response = await _subscriptionService.GetSubsPercentAllSubs(cancellationToken);
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { ErrorMessage = e.Message });
+            }
+
+        }
         [HttpPost("AddSubsPercent")]
-        public async Task<ActionResult<SubscriptionResource>> AddSubsPercent([FromBody] SubscriptionResource resource, CancellationToken cancellationToken)
+        public async Task<ActionResult<SubscriptionResource>> AddSubsPercent(IFormCollection collection, CancellationToken cancellationToken)
         {
             try
             {
-                var response = await _subscriptionService.AddSubsPercent(resource, cancellationToken);
+                Subscriptionperc subscriptionperc = new Subscriptionperc();
+                subscriptionperc.Endate = DateTime.Now;
+                subscriptionperc.Enuser = "Shazia";/*TempData["Username"];*/
+                var Appowner = collection["Appowner"];
+                var Vendor = collection["Vendor"];
+                var Customer = collection["Customer"];
+                var Subvendor = collection["Subvendor"];
+                subscriptionperc.Appowner = float.Parse(Appowner);
+                subscriptionperc.Vendor = float.Parse(Vendor);
+                subscriptionperc.Customer = float.Parse(Customer);
+                subscriptionperc.Subvendor = float.Parse(Subvendor);
+
+
+                var subscription = new SubscriptionResource
+                (
+                subscriptionperc.RecId,
+                6,
+                float.Parse(collection["Appowner"]),
+                float.Parse(collection["Vendor"]),
+                float.Parse(collection["Customer"]),
+                float.Parse(collection["Subvendor"]),
+                DateTime.Now,
+                "shazia"
+
+                );
+
+                var response = await _subscriptionService.AddSubsPercent(subscription, cancellationToken);
                 return Ok(response);
             }
             catch (Exception e)
@@ -48,17 +106,43 @@ namespace paisa2u.API.Controllers
         }
 
         // PUT: Subscriptionpercs/Edit/5
-        [HttpPut("UpdateSubsPerc")]
-        public async Task<ActionResult<SubscriptionResource>> UpdateSubsPerc([FromBody] SubscriptionResource resource, CancellationToken cancellationToken)
+        [HttpPost("UpdateSubsPerc")]
+        public async Task<ActionResult<SubscriptionResource>> UpdateSubsPerc(IFormCollection collection, CancellationToken cancellationToken)
         {
-            if (resource == null)
-            {
-                return NotFound();
-            }
             try
             {
-                var response = await _subscriptionService.UpdateSubsPercent(resource.Recid, resource, cancellationToken);
+                Subscriptionperc subscriptionperc = new Subscriptionperc();
+
+                subscriptionperc.Endate = DateTime.Parse(collection["Endate"]);
+                subscriptionperc.RegId = int.Parse(collection["RegId"]);
+                subscriptionperc.RecId = int.Parse(collection["RecId"]);
+                subscriptionperc.Enuser = collection["Enuser"];
+                var Appowner = collection["Appowner"];
+                var Vendor = collection["Vendor"];
+                var Customer = collection["Customer"];
+                var Subvendor = collection["Subvendor"];
+                subscriptionperc.Appowner = float.Parse(Appowner);
+                subscriptionperc.Vendor = float.Parse(Vendor);
+                subscriptionperc.Customer = float.Parse(Customer);
+                subscriptionperc.Subvendor = float.Parse(Subvendor);
+
+
+                var subscription = new SubscriptionResource
+                (
+                int.Parse(collection["RecId"]),
+                int.Parse(collection["RegId"]),
+                float.Parse(collection["Appowner"]),
+                float.Parse(collection["Vendor"]),
+                float.Parse(collection["Customer"]),
+                float.Parse(collection["Subvendor"]),
+                subscriptionperc.Endate,
+                collection["Enuser"]
+
+                );
+
+                var response = await _subscriptionService.UpdateSubsPercent(subscription.Recid, subscription, cancellationToken);
                 return Ok(response);
+                
             }
             catch (Exception e)
             {
@@ -69,13 +153,15 @@ namespace paisa2u.API.Controllers
 
 
         // GET: Subscriptionpercs/Delete/5
-        [HttpDelete("Delete")]
-        public async Task<ActionResult<SubscriptionResource>> Delete([FromBody] SubscriptionResource resource, CancellationToken cancellationToken)
+        [HttpPost("DeleteSubsPerc")]
+        public async Task<ActionResult<SubscriptionResource>> DeleteSubsPerc(string Recid, CancellationToken cancellationToken)
         {
-            try
-            {
-                var response = await _subscriptionService.DeleteSubsPercent(resource, cancellationToken);
-                return Ok(response);
+             try
+                
+                {
+             
+                var response = await _subscriptionService.DeleteSubsPercent(int.Parse(Recid), cancellationToken);
+                    return Ok(response);
             }
             catch (Exception e)
             {

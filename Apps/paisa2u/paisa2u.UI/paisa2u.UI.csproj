@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,9 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="GridCore" Version="6.0.4" />
     <PackageReference Include="GridMvcCore" Version="6.0.4" />
+    <PackageReference Include="GridShared" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.15" />
+    <PackageReference Include="NonFactors.Grid.Core.Mvc6" Version="7.2.0" />
     <PackageReference Include="NonFactors.Grid.Mvc6" Version="7.2.0" />
   </ItemGroup>
 

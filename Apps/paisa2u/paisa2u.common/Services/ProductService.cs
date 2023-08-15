@@ -28,8 +28,6 @@ namespace paisa2u.common.Services
             };
             await _context.Products.AddAsync(product, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
-
-
             return new ProductResource(
                 product.Productid,
                 product.Catid,
@@ -43,7 +41,6 @@ namespace paisa2u.common.Services
 
                 );
         }
-
         public async Task<IEnumerable<ProductResource>> GetProduct(int productid, CancellationToken cancellationToken)
         {
             List<ProductResource> productlist = new List<ProductResource>();

@@ -116,7 +116,7 @@ namespace paisa2u.UI.Controllers
             {
                 Users user = new Users();
                 user.Email = collection["email"];
-                user.Pwd = "abc";
+                user.Pwd = "abc";//required by login resource but not used
                 StringContent content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
                 var client = new HttpClient();
                 client.DefaultRequestHeaders.Clear();
@@ -165,25 +165,58 @@ namespace paisa2u.UI.Controllers
             }
             return View("ForgotPassword"); //for checking
         }
-        //Added by Shazia Aug 4, 2023 for registration
+        //Added by Shazia Aug 14, 2023 for registration
         public ActionResult Register()
         {
             return View("Register");
         }
+     
         [HttpGet]
         public ActionResult ForgotPassword()
         {
             return View("ForgotPassword");
         }
+       
+        //public ActionResult Register(string email)
+        //{
+        //     return View("Register");
+        //}
+
         [HttpGet]
         public ActionResult ResetPassword(string email)
         {
             ViewBag.email = email;
             return View("ResetPassword");
         }
+
+        //created by Shazia on Aug 14, 2023 for resetting and forget password
         [HttpPost]
-    
-        //created by Shazia on Aug 6, 2023 for resetting and forget password
+        public ActionResult SendtoAfriend(IFormCollection collection)
+        {
+            var sendto = collection["email"];
+            MailMessage message = new MailMessage();
+
+            message.From = new MailAddress("smalikbudhwani@gmail.com");
+            message.To.Add(sendto);
+            message.Bcc.Add("mohtashim1974@outlook.com");
+            message.Subject = "Register";
+            message.Body = "https://localhost:7257/Users/Register?RegId=" + TempData["RegId"];
+
+            var client = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587 /*465*/,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(message.From.ToString(), "yvfqhwixtvavufzj")
+            };
+            client.Send(message);
+            return View("InviteConfirmation");
+        }
+
+       
+       //created by Shazia on Aug 6, 2023 for resetting and forget password
         [HttpPost]
         public ActionResult ForgotPasswordSendEmail(IFormCollection collection)
         {
@@ -212,15 +245,7 @@ namespace paisa2u.UI.Controllers
         [HttpPost]
         public async Task<ActionResult<Users>> RegisterUser(IFormCollection collection/*, string uri*/)
         {
-            //string uri = "http://example.com/file?a=3&b=2&c=string%20param";
-            //string[] parts = uri.Split(new char[] { '?', '&' });
-            // parts[0] now contains http://example.com/file
-            // parts[1] = "a=1"
-            // parts[2] = "b=2"
-            // parts[3] = "c=string%20param"
-            //int part1 = parts[1].IndexOf("=");
-            //string referredby = parts[1].Substring(part1+1);
-            //creeate / register
+           //create / register
             Users user = new Users();
             user.Email = collection["gr_register_Email"];
             user.Username = collection["gr_register_Username"];
@@ -273,67 +298,7 @@ namespace paisa2u.UI.Controllers
             return View("../Home/Index");
         }
             
-        // GET: UsersController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: UsersController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: UsersController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: UsersController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: UsersController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: UsersController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
+        
     }
 }

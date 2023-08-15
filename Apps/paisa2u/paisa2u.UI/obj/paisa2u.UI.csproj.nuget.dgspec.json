@@ -152,9 +152,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "GridCore": {
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
             "GridMvcCore": {
               "target": "Package",
               "version": "[6.0.4, )"
+            },
+            "GridShared": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -163,6 +171,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.15, )"
+            },
+            "NonFactors.Grid.Core.Mvc6": {
+              "target": "Package",
+              "version": "[7.2.0, )"
             },
             "NonFactors.Grid.Mvc6": {
               "target": "Package",

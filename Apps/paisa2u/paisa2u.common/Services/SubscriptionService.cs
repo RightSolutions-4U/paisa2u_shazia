@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using paisa2u.common.Models;
 using paisa2u.common.Resources;
+using System;
 
 namespace paisa2u.common.Services
 {
@@ -51,17 +52,17 @@ namespace paisa2u.common.Services
                 );
         }
 
-        public async Task<SubscriptionResource> DeleteSubsPercent(SubscriptionResource resource, CancellationToken cancellationToken)
+        public async Task<SubscriptionResource> DeleteSubsPercent(int Recid, CancellationToken cancellationToken)
         {
             var delsubscriptionperc = await _context.Subscriptionpercs.FirstOrDefaultAsync(
-                x => x.RecId == resource.Recid);
-            if (delsubscriptionperc.RecId != resource.Recid)
+                x => x.RecId == Recid);
+            if (delsubscriptionperc.RecId != Recid)
             {
-                throw new Exception("Address to remove does not exist");
+                throw new Exception("Record to remove does not exist");
             }
             var subscriptionperc = new SubscriptionResource
             (
-                delsubscriptionperc.RecId,
+                Recid,
                 delsubscriptionperc.RegId,
                 (float)delsubscriptionperc.Appowner,
                 (float)delsubscriptionperc.Vendor,
@@ -83,10 +84,76 @@ namespace paisa2u.common.Services
 
         }
 
-        public async Task<SubscriptionResource> GetSubsPercent(int RecId, CancellationToken cancellationToken)
+        public async Task<List<SubscriptionResource>> GetSubsPercentAllSubs(CancellationToken cancellationToken)
         {
-            var subscriptionperc = await _context.Subscriptionpercs.FirstOrDefaultAsync(
-                x => x.RecId == RecId);
+            List<SubscriptionResource> SubsList = new List<SubscriptionResource>();
+            var subscriptionperc = await _context.Subscriptionpercs.OrderByDescending(x => x.Endate)
+            .ToListAsync(cancellationToken);
+            if (subscriptionperc == null)
+                throw new Exception("Subscription% record does not exist!");
+            foreach (Subscriptionperc Subs in subscriptionperc)
+            {
+                SubsList.Add
+                (
+                    new SubscriptionResource(
+                    Subs.RecId,
+                    Subs.RegId,
+                    (float)Subs.Appowner,
+                    (float)Subs.Vendor,
+                    (float)Subs.Subvendor,
+                    (float)Subs.Customer,
+                    Subs.Endate,
+                    Subs.Enuser
+                    )
+
+                );;
+            }
+            return SubsList;
+        }
+        public async Task<List<RegUserResource>> GetSubsPercentAll(CancellationToken cancellationToken)
+        {
+            List<RegUserResource> RegList = new List<RegUserResource>();
+            var subscriptionperc1 = _context.Subscriptionpercs;
+            var users = await _context.Users
+            .Where(m => !subscriptionperc1.Any(d => d.RegId == m.RegId))
+.           ToListAsync(cancellationToken);
+            if (users == null)
+                throw new Exception("Subscription% record does not exist!");
+            foreach (Users User in users)
+            {
+                RegList.Add
+                (
+                    new RegUserResource(
+                    User.RegId,
+                    User.Firstname,
+                    User.Middlename,
+                    User.Lastname,
+                    User.Email,
+                    User.Username,
+                    "",
+                    User.Referredby,
+                    User.Regtype,
+                    User.Vendortype,
+                    User.Phonenumber,
+                    User.Endate,
+                    User.Enuser,
+                    User.Substype,
+                    User.Regstatus,
+                    User.Autorenewal,
+                    User.Qrpicture,
+                    User.PasswordSalt,
+                    User.PasswordHash
+                    )
+                   
+                );
+            }
+            return RegList;
+        }
+        public async Task<SubscriptionResource> GetSubsPercentByRegId(int RegId, CancellationToken cancellationToken)
+        {
+            var subscriptionperc = await _context.Subscriptionpercs.Where(x => x.RegId == RegId).OrderByDescending(x => x.Endate).
+                FirstOrDefaultAsync(
+               );
             if (subscriptionperc == null)
                 throw new Exception("Subscription% record does not exist!");
             return new SubscriptionResource(
@@ -100,7 +167,6 @@ namespace paisa2u.common.Services
                 subscriptionperc.Enuser
                 );
         }
-
         public async Task<SubscriptionResource> UpdateSubsPercent(int RecId, SubscriptionResource resource, CancellationToken cancellationToken)
         {
             var upsubspercent = await _context.Subscriptionpercs.FirstOrDefaultAsync(

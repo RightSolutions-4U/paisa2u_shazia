@@ -1,0 +1,57 @@
+﻿@*Added by Shazia Aug 4, 2023 for registration*@
+<div class="container" style="top: 5px;">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8 align-items-md-center" style=" display: flex;justify-content: center;">
+            <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
+                <div class="text-center text-md-start card-hover">
+                    <div class="card-body">
+                        <header class="text-center mb-4">
+                            <h2 class="h2 g-color-black g-font-weight-400 trn" data-trn="Add Subscription Percentage">Add Subscription Percentage</h2>
+                        </header>
+                        <!-- Form -->
+                        <form class="g-py-15" id="gr_log_in_form" action="/Admin/AddSubsPercent" method="post">
+                            <div class="col-md-6 con-left">
+                                <input type="hidden" id="RegId" name="RegId" value="3">
+                                <div class="form-group mb-4" style="text-align:left">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="Appowner" for="Appowner">% for App owner <span class="fw-color-red">*</span>:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_Appowner" id="Appowner" name="Appowner" type="text" placeholder="Enter % for App owner">
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="Vendor" for="Vendor">% for Vendor <span class="fw-color-red">*</span>:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_Vendor" id="Vendor" name="Vendor" type="text" placeholder="Enter % for Vendor">
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="SubVendor" for="SubVendor">% for SubVendor<span class="fw-color-red">*</span>:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_SubVendor" id="SubVendor" name="SubVendor" type="text" placeholder="Enter % for SubVendor">
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="Customer" for=">Customer">% for Customer <span class="fw-color-red">*</span>:</label>
+                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_Customer" id="Customer" name="Customer" type="text" placeholder="Enter % for Customer">
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="row justify-content-between">
+                                <div class="col-md-4 col-sm-12 align-self-center mb-4">
+                                    <button id="gr_log_in" class="btn btn-lg btn-success rounded g-py-13 g-px-25 trn gr_spinner_btn" data-trn="Add" type="submit">
+                                        Add
+                                        <span class="spinner"></span>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                           
+                        </form> <!-- End Form -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-2">
+        </div>
+
+
+    </div>
+</div>

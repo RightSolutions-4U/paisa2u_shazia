@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #ffffff;
+      height: 100%;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                
+            </div>
+            <div class="col-sm-8 text-left">
+                <div class="border border-info">
+                    <form action="@Url.Action("CheckLogin","Siteusers")" method="post">
+                        <h1>Please Login</h1>
+                        <hr>
+                        <p class="font-weight-bold text-danger"><label id="msg" name="msg" value="@ViewBag.welcome" />@ViewBag.welcome</p>
+                        <table class="table table-sm" width="50%" align="center" cellpadding="10" cellspacing="10">
+                            <tr>
+                                <td>
+                                    <label value="UserId">Email</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="email" name="email" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label value="Password">Password</label>
+                                </td>
+                                <td>
+                                    <input type="password" id="pwd" name="pwd" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" colspan="2">
+                                    <input type="submit" value="Login" class="btn btn-info" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-2 sidenav">
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

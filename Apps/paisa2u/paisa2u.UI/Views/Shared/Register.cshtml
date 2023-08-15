@@ -113,11 +113,11 @@
                                 </div>
                             <script type="text/javascript">
                                 $(document).ready(function () {
-                                    alert("entered");
+                                  
                                     var uri = window.location.href;
                                     const myArray = uri.split('?');
                                     let referredby = myArray[1].substring(myArray[1].toString().indexOf("=") + 1);
-                                    alert("referred by " + referredby);
+                                   
                                     if (referredby >= 1) {
                                         document.getElementById("gr_register_Referredby").value = referredby;
                                     }
