@@ -39,7 +39,9 @@ public partial class Users
 
     public string? Qrpicture { get; set; }
     public string? PasswordSalt { get; set; } 
-    public string? PasswordHash { get; set; } 
+    public string? PasswordHash { get; set; }
+    public string? vendorfilename { get; set; }
+    
 
     public virtual ICollection<Address> Addresses { get; set; } = new List<Address>();
 

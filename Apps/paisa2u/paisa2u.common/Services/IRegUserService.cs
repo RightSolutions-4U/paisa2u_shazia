@@ -18,10 +18,11 @@ namespace paisa2u.common.Services
         Task<List<RegUserResource>> GetAllReferralsByRegid(int Regid, CancellationToken cancellationToken);
 
         Task<RegUserResource> GetRegUser(int regid, CancellationToken cancellationToken);
-        
+        Task<RegUserResource> GetRegType(int regid, CancellationToken cancellationToken);
+
         Task<RegUserResource> UpdateRegUser(int id, RegUserResource resource, CancellationToken cancellationToken);
 
         Task<RegUserResource> DeleteRegUser(RegUserResource resource, CancellationToken cancellationToken);
-
+        
     }
 }

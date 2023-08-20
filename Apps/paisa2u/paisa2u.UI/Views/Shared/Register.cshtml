@@ -11,7 +11,7 @@
                             <h2 class="h2 g-color-black g-font-weight-400 trn" data-trn="Register">Register User</h2>
                         </header>
                         <!-- Form -->
-                        <form class="g-py-15" id="gr_log_in_form" action="/Users/RegisterUser" method="post">
+                        <form class="g-py-15" id="gr_log_in_form" action="/Users/RegisterUser" method="post" enctype="multipart/form-data">
                             <div class="col-md-6 con-left">
                                 <div class="form-group mb-4" style="text-align:left">
                                     <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="firstname" for="gr_register_FirstName">First Name <span class="fw-color-red">*</span>:</label>
@@ -44,12 +44,11 @@
                                     <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_your_phone#" id="gr_register_PhoneNumber" name="gr_register_PhoneNumber" type="text" placeholder="Enter your Phone Number">
                                 </div>
                                 
-                                @*<div class="form-group mb-4">
-                                    <label class="my-2">Referred By</label>
-                                    <select data-trn="Referredby" id="Referredby" name="Referredby"  >
-                                            <option value="0">Referred By</option>
-                                    </select>
-                                </div>*@
+                                <div class="form-group mb-4">
+                                    <img src="~/images/logo.jpeg" width="100px" height="100px" name="productpictureE" id="productpictureE" />  
+                                    <img src="~/images/editicon.jpeg" width="20px" height="20px" name="pictureupload" id="pictureupload" alt="Change Picture" />
+                                    <input type="file" id="myFile" name="myFile" style="display:block;">
+                                </div>
                                 <div class="form-group mb-4">
                                         <label class="my-2">Subscription Type</label>
                                             <select data-trn="Substype" class="select" id="Substype" name="Substype">
@@ -75,7 +74,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <input id="gr_register_Referredby" name="gr_register_Referredby" type="hidden">
+                                    <input id="gr_register_Referredby" name="gr_register_Referredby" type="text">
                                 </div>
                                 <div class="form-group mb-4">
                                     <label class="my-2">Auto Renewal</label>
@@ -91,10 +90,7 @@
                                         <option value="N">No</option>
                                     </select>
                                 </div>
-                                <div class="form-group mb-4">
-                                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="Qrpicture" for="gr_register_Qrpicture">Qrpicture <span class="fw-color-red">*</span>:</label>
-                                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_Qr_Code" id="gr_register_QrPicture" name="QrPicture" type="text" placeholder="Enter your Qr Code">
-                                </div>
+                                
                             
                             </div>
                                 <div class="row justify-content-between">
@@ -113,15 +109,30 @@
                                 </div>
                             <script type="text/javascript">
                                 $(document).ready(function () {
-                                  
+                                    $("#pictureupload").click(function () {
+                                        var x = document.getElementById("myFile");
+                                        alert('inside myfile');
+                                        //x.style.display = "block";
+                                    });
+                                    
+                                    
                                     var uri = window.location.href;
                                     const myArray = uri.split('?');
                                     let referredby = myArray[1].substring(myArray[1].toString().indexOf("=") + 1);
-                                   
+                                    alert('myarray ' + myArray + 'referred ' + referredby);
                                     if (referredby >= 1) {
                                         document.getElementById("gr_register_Referredby").value = referredby;
+                                        alert('item ' + document.getElementById("gr_register_Referredby").value);
                                     }
-                                    );//document ready
+                                    //by Shazia for vendor pic on aug 17,2023 - both funcs
+                                    
+                                    $("#myFile").change(function () {
+                                    var x = document.getElementById("myFile");
+                                    //x.style.display = "none";
+                                        alert('inside' + myFile);
+                                    });
+                                    });//document ready
+                                
                            </script>
                         </form> <!-- End Form -->
                      </div>

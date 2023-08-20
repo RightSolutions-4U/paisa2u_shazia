@@ -12,8 +12,10 @@ public partial class Vendor
     public DateTime Endate { get; set; }
 
     public string Enuser { get; set; } = null!;
+    public string pictureurl { get; set; } = null;
 
     public virtual Users Reg { get; set; } = null!;
+ 
 
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
     

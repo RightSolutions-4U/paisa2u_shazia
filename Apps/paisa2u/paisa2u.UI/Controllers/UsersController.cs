@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
+using NuGet.Packaging.Signing;
 using paisa2u.common.Models;
 using paisa2u.common.Resources;
 using paisa2u.common.Services;
@@ -18,16 +20,14 @@ namespace paisa2u.UI.Controllers
 {
     public class UsersController : Controller
     {
-        //private readonly UserManager<Users> _userManager;
-        //private readonly SignInManager<Users> _signInManager;
-        //private readonly IEmailSender _emailSender;
-        //public UsersController(UserManager<Users> userManager, SignInManager<Users> signInManager, IEmailSender emailSender)
-        //{
-        //    _userManager = userManager;
-        //    _signInManager = signInManager;
-        //    _emailSender = emailSender;
-        //}
+        private readonly IWebHostEnvironment _hostingEnvironment;
+
         // GET: UsersController
+        public UsersController( IWebHostEnvironment hostingEnvironment)
+        {
+           
+            _hostingEnvironment = hostingEnvironment;
+        }
         public ActionResult Login(int id)
         {
             return View("Login");
@@ -62,8 +62,6 @@ namespace paisa2u.UI.Controllers
             return View();
         }
 
-      
-
         [HttpPost]
         public async Task<ActionResult<Users>> CheckLogin(IFormCollection collection)
         {
@@ -82,12 +80,14 @@ namespace paisa2u.UI.Controllers
                 string apiResponse = await response.Content.ReadAsStringAsync();
 
                 var a = JsonConvert.DeserializeObject<Users>(apiResponse);
-                if (Request.Cookies["RegId"] == null)
+                if (Request.Cookies["RegId"] == null | Request.Cookies["username"] == null)
                 {
                     CookieOptions option = new CookieOptions();
                     option.Expires = DateTime.Now.AddDays(50);
                     option.IsEssential = true;
-                    Response.Cookies.Append("userid", a.RegId.ToString(), option);
+                    Response.Cookies.Append("regid", a.RegId.ToString(), option);
+                    Response.Cookies.Append("username", a.Username, option);
+                    Response.Cookies.Append("regtype", a.Regtype, option);
 
                 }
                 //changed username to Email by Shazia Jul 31, 2023 and added TempData
@@ -147,7 +147,8 @@ namespace paisa2u.UI.Controllers
                     a.Autorenewal,
                     a.Qrpicture,
                     salt,
-                    PasswordHash
+                    PasswordHash,
+                    a.vendorfilename
                     );
                     var client2 = new HttpClient();
                     client2.DefaultRequestHeaders.Clear();
@@ -243,9 +244,24 @@ namespace paisa2u.UI.Controllers
             return View("ForgotPasswordConfirmation");
         }
         [HttpPost]
-        public async Task<ActionResult<Users>> RegisterUser(IFormCollection collection/*, string uri*/)
+        public async Task<ActionResult<Users>> RegisterUser(IFormFile myFile, IFormCollection collection)
         {
-           //create / register
+            string fileName;
+            string projectRootPath = _hostingEnvironment.WebRootPath;
+            var pic = collection["myFile"];
+            string path = "/images/vendorimages";
+            List<string> uploadedFiles = new List<string>();
+
+            var Extension = Path.GetExtension(myFile.FileName);
+            fileName = Path.GetFileName(myFile.FileName) + DateTime.Now.ToString("yyyyMMddHHmmssfff") + Extension;
+
+            //Saving file to Folder
+            using (FileStream stream = new FileStream(Path.Combine(projectRootPath + path, fileName), FileMode.Create))
+            {
+                myFile.CopyTo(stream);
+                uploadedFiles.Add(fileName);
+            }
+            //create / register
             Users user = new Users();
             user.Email = collection["gr_register_Email"];
             user.Username = collection["gr_register_Username"];
@@ -264,7 +280,8 @@ namespace paisa2u.UI.Controllers
             user.Enuser = collection["gr_register_Firstname"];
             user.PasswordHash = "234";
             user.PasswordSalt = "234";
-            user.Qrpicture = "123";
+            user.Qrpicture = "234";
+            user.vendorfilename = fileName;
 
             if (Autorenewal == "N")
             {   user.Autorenewal = false; }

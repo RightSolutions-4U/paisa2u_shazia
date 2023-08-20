@@ -3,6 +3,7 @@ using paisa2u.common.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using paisa2u.common.Models;
+using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
 namespace paisa2u.API.Controllers
 {
@@ -12,11 +13,16 @@ namespace paisa2u.API.Controllers
     {
         private readonly IRegUserService _reguserService;
         private readonly IVendorService _vendorService;
+        private readonly ISubscriptionSetupService _subscriptionSetupService;
+        private readonly ITransactionsService _transactionsService;
 
-        public UsersController(IRegUserService reguserService, IVendorService vendorService)
+        public UsersController(IRegUserService reguserService, IVendorService vendorService, 
+                ISubscriptionSetupService subscriptionSetupService, ITransactionsService transactionService)
         {
             _reguserService = reguserService;
             _vendorService = vendorService;
+            _subscriptionSetupService = subscriptionSetupService;
+            _transactionsService = transactionService;
         }
         //Added by Shazia Aug 4, 2023 for registration
         [HttpPost("Register")]
@@ -26,17 +32,31 @@ namespace paisa2u.API.Controllers
             {
                 var response = await _reguserService.Registration(resource, cancellationToken);
                 //Add record to vendor table
-                if(response.Vendortype == "V")
+                if(response.Regtype == "V")
                 {
                     var vendorresource = new VendorResource
                     (
                     0,
-                    response.Regid, response.Endate, response.Enuser
+                    response.Regid, response.Endate, response.Enuser, response.vendorfilename
                     );
                     var res = await _vendorService.AddVendor(vendorresource, cancellationToken);
                 }
-                
-
+                if (response.Regtype != "O") //for all other types deduct fees on Aug 18
+                {
+                    var result = await _subscriptionSetupService.GetSubscriptionBySubType(response.Substype, cancellationToken);
+                    if (result != null)
+                    {
+                        var transactionresource = new TransactionsResource
+                        (0, response.Regid, result.Subfee, response.Endate, response.Enuser,"D");
+                        var resulttrans = await _transactionsService.AddTransaction(transactionresource, cancellationToken);
+                        if (resulttrans == null)
+                        {
+                            return BadRequest(new { ErrorMessage = resulttrans });
+                        }
+                    }
+                    else { return BadRequest(new { ErrorMessage = "Subscription fee is null" }); }
+                 }
+                    
                 return Ok(response);
             }
             catch (Exception e)
@@ -89,6 +109,11 @@ namespace paisa2u.API.Controllers
         public async Task<List<RegUserResource>> GetAllReferralsByRegid(int Regid,CancellationToken cancellationToken)
         {
             return await _reguserService.GetAllReferralsByRegid(Regid,cancellationToken);
+        }
+        [HttpGet("GetRegType")]
+        public async Task<RegUserResource> GetRegType(int Regid, CancellationToken cancellationToken)
+        {
+            return await _reguserService.GetRegType(Regid, cancellationToken);
         }
         [HttpGet("GetRegUser")]
         public async Task<IActionResult> GetRegUser(int regid, CancellationToken cancellationToken)

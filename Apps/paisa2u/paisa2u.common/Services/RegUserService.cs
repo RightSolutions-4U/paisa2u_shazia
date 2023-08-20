@@ -43,7 +43,9 @@ namespace paisa2u.common.Services
                 Autorenewal = resource.Autorenewal,
                 Qrpicture = resource.Qrpicture,
                 PasswordSalt = PasswordHasher.GenerateSalt(),
-                PasswordHash = resource.PasswordHash
+                PasswordHash = resource.PasswordHash,
+                vendorfilename = resource.vendorfilename
+
             };
             user.PasswordHash = PasswordHasher.ComputeHash(resource.Pwd, user.PasswordSalt, _pepper, _iteration);
             await _context.Users.AddAsync(user, cancellationToken);
@@ -70,7 +72,8 @@ namespace paisa2u.common.Services
                 user.Autorenewal,
                 user.Qrpicture,
                 user.PasswordSalt,
-                user.PasswordHash
+                user.PasswordHash,
+                user.vendorfilename
                 
                 );
         }
@@ -107,7 +110,8 @@ namespace paisa2u.common.Services
                 user.Autorenewal,
                 user.Qrpicture,
                 user.PasswordHash,
-                user.PasswordSalt
+                user.PasswordSalt,
+                user.vendorfilename
                 );
         }
         public async Task<RegUserResource> Login_check_email(UserLoginResource resource, CancellationToken cancellationToken)
@@ -137,7 +141,8 @@ namespace paisa2u.common.Services
                 user.Autorenewal,
                 user.Qrpicture,
                 user.PasswordHash,
-                user.PasswordSalt
+                user.PasswordSalt,
+                user.vendorfilename
                 );
         }
 
@@ -168,7 +173,8 @@ namespace paisa2u.common.Services
                 User.Autorenewal,
                 User.Qrpicture,
                 "",
-                ""
+                "",
+                User.vendorfilename
                 )
                );
                     
@@ -202,11 +208,44 @@ namespace paisa2u.common.Services
                 user.Autorenewal,
                 user.Qrpicture,
                 "",
-                ""
+                "",
+                user.vendorfilename
                 );
 
         }
-         public async Task<RegUserResource> UpdateRegUser(int id, RegUserResource user, CancellationToken cancellationToken)
+        public async Task<RegUserResource> GetRegType(int regid, CancellationToken cancellationToken)
+        {
+            var user = await _context.Users
+                .FirstOrDefaultAsync(x => x.RegId == regid, cancellationToken);
+
+            if (user == null)
+                throw new Exception("Registered User Id does not exist!");
+
+            return new RegUserResource(
+                 user.RegId,
+                 user.Firstname,
+                 user.Middlename,
+                 user.Lastname,
+                 user.Email,
+                 user.Username,
+                 "",
+                 user.Referredby,
+                 user.Regtype,
+                 user.Vendortype,
+                 user.Phonenumber,
+                 user.Endate,
+                 user.Enuser,
+                 user.Substype,
+                 user.Regstatus,
+                 user.Autorenewal,
+                 user.Qrpicture,
+                 "",
+                 "",
+                 user.vendorfilename
+                 );
+
+        }
+        public async Task<RegUserResource> UpdateRegUser(int id, RegUserResource user, CancellationToken cancellationToken)
         {
             var eduser = await _context.Users
                 .FirstOrDefaultAsync(x => x.RegId == id, cancellationToken);
@@ -232,6 +271,7 @@ namespace paisa2u.common.Services
             eduser.PasswordSalt = user.PasswordSalt;
             eduser.Regtype = user.Regtype;
             eduser.Vendortype = user.Vendortype;
+            eduser.vendorfilename = user.vendorfilename;
             _context.Entry(eduser).State = EntityState.Modified;
 
             
@@ -263,7 +303,8 @@ namespace paisa2u.common.Services
                 user.Autorenewal,
                 user.Qrpicture,
                 user.PasswordHash,
-                user.PasswordSalt
+                user.PasswordSalt,
+                user.vendorfilename
                 );
         }
 
@@ -294,7 +335,8 @@ namespace paisa2u.common.Services
                 user.Autorenewal,
                 user.Qrpicture,
                 user.PasswordHash,
-                ""
+                "",
+                user.vendorfilename
                 );
             _context.Entry(user).State = EntityState.Deleted;
             try
@@ -341,7 +383,7 @@ namespace paisa2u.common.Services
                 User.Autorenewal,
                 User.Qrpicture,
                 "",
-                ""
+                "", User.vendorfilename
                 )
                );
             }
@@ -378,7 +420,8 @@ namespace paisa2u.common.Services
                 User.Autorenewal,
                 User.Qrpicture,
                 "",
-                ""
+                "",
+                User.vendorfilename
                 )
                );
             }

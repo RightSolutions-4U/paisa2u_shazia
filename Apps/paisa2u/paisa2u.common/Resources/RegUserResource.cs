@@ -21,7 +21,8 @@ namespace paisa2u.common.Resources
         Boolean Autorenewal,
         string Qrpicture,
         string PasswordSalt,
-        string PasswordHash
+        string PasswordHash,
+        string vendorfilename
 
         );
 }

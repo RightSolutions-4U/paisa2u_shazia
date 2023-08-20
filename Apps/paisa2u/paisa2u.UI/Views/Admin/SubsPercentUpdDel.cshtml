@@ -8,8 +8,9 @@
 @using System.Web;
 @addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
 @using paisa2u.common.Models
-@using NonFactors.Mvc.Grid;
+@*@using NonFactors.Mvc.Grid;*@
 @model IEnumerable<SubscriptionResource>
+
 
 <section class="py-2" id="Opportuanities">
     <script>
@@ -17,64 +18,38 @@
             alert('here');
 
         }//function Add closes
-        $(document).ready(function () {
-            $('.ss').click(function () {
-                alert('inside');
-                var RegId = $(this).data('id');
-                alert(RegId);
-                $.ajax({
-                    type: "GET",
-                    url: "https://localhost:7172/api/Subscriptionpercs/GetSubsPercentByRegId",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    data: { RegId: RegId },
-                    success: function (response) {
-                        alert(JSON.stringify(response));
+        function GetPercById(lRegId) {
+            alert('RegId ' + lRegId);
+            $.ajax({
+                type: "GET",
+                url: "https://localhost:7172/api/Subscriptionpercs/GetSubsPercentByRegId",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: { RegId: lRegId },
+                success: function (response) {
+                    alert(JSON.stringify(response));
 
-                        $('#Appowner').val(response.appowner);
-                        $('#Vendor').val(response.vendor);
-                        $('#Subvendor').val(response.subvendor);
-                        $('#Customer').val(response.customer);
-                        $('#Endate').val(response.endate);
-                        $('#Enuser').val(response.enuser); //whoever is logged in cookies["userid"]
-                        $('#Recid').val(response.recid);
-                        $('#RegId').val(response.regId);
-                        //location.reload();
-                    },
-                    failure: function (data) {
-                        alert('failure in getting vendors');
-                        alert(data.responseText);
-                    },
-                    error: function (xhr, ajaxOptions, thrownError) {
-                        alert(xhr.status);
-                        alert(thrownError);
-                    } //error
+                    $('#Appowner').val(response.appowner);
+                    $('#Vendor').val(response.vendor);
+                    $('#Subvendor').val(response.subvendor);
+                    $('#Customer').val(response.customer);
+                    $('#Endate').val(response.endate);
+                    $('#Enuser').val(response.enuser); //whoever is logged in cookies["userid"]
+                    $('#Recid').val(response.recid);
+                    $('#RegId').val(response.regId);
+                    //location.reload();
+                },
+                failure: function (data) {
+                    alert('failure in getting vendors');
+                    alert(data.responseText);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                } //error
 
-                });//ajax closure
-            })//click
-            alert('here b4 delete');
-          //  $(“#.sd”).on(“click”, DeleteRecord);
-            $('.sd').click(function () {
-                var Recid = $(sd).data('id');
-              
-                alert('here in delete');
-               
-                $.ajax({
-                    type: 'POST',
-                    url: 'https://localhost:7172/api/Subscriptionpercs/DeleteSubsPerc',
-                    contentType: 'application/json; charset=utf-8',
-                    dataType: "json",
-                    data: { Recid: 1 },//lRecId
-                    success: function (result) {
-                        alert(" subscription% has been deleted ");
-                        location.reload();
-                    }
-                    , error: function (result) {
-                        alert("err " + result.responseText);
-                    }
-                });//ajax closure
-            })//sd click
-         });//document ready
+            });//ajax closure
+       }
  
     </script>
     <div class="container" style="top: 10px;">  
@@ -82,26 +57,32 @@
         <div class="col-md-12">
             <div class="row">
                 <h5 style="text-align:center"> @ViewBag.Admin</h5>
-                    @(
-                         Html.Grid(Model).Build(columns =>
-                         {
-                             columns.Add(model => model.Appowner).Titled("App owner");
-                             columns.Add(model => model.Vendor).Titled("Vendor");
-                             columns.Add(model => model.Customer).Titled("Customer");
-                             columns.Add(model => model.Subvendor).Titled("Sub Vendor");
-                             columns.Add(model => model.Endate).Titled("Entry date");
-                             columns.Add(model => model.Enuser).Titled("Entry user");
-                             columns.Add(model => model.RegId).Titled("Registration Id");
-                             columns.Add(model => model.Recid).Titled("Record Id");
-                             columns.Add(model => $"<a  onclick='hideme(123);' data-modal='' data-id=" + @model.RegId + " href='#' name=\"ss\" id=\"ss\" asp-action=\"PR\" asp-route-id=\"@model.Regid\" class=\"btn btn-success ss\" '> Update <span class='glyphicon      glyphicon-user'> </span> </a>").Encoded(false);
-                            columns.Add(model => $"<a onclick='DeleteRecord();' data-modal='' data-id=" + @model.Recid + "   href='#'  name=\"sd\"  id=\"sd\"  asp-action=\"PR\" asp-route-id=\"@model.Recid\" class=\"btn     btn-success\" '> Delete <span class='glyphicon      glyphicon-user'> </span> </a>").Encoded(false);
+                        @(
+                                Html.Grid(Model).Columns(columns =>
+                                 {
+                                     columns.Add(model => model.Appowner).Titled("App owner");
+                                     columns.Add(model => model.Vendor).Titled("Vendor");
+                                     columns.Add(model => model.Customer).Titled("Customer");
+                                     columns.Add(model => model.Subvendor).Titled("Sub Vendor");
+                                     columns.Add(model => model.Endate).Titled("Entry date");
+                                     columns.Add(model => model.Enuser).Titled("Entry user");
+                                     columns.Add(model => model.RegId).Titled("Registration Id");
+                                     columns.Add(model => model.Recid).Titled("Record Id");
+                                     columns.Add()
+                                     .Encoded(false)
+                                     .Sanitized(false)
+                                     .SetWidth(40)
+                                    .RenderValueAs(o => @<a href="#" onclick='hideme(123); GetPercById(@o.RegId);' data-modal='' id="ss" name="ss" data-id="@o.RegId" class="btn btn-success ss"> Update <span class='glyphicon  glyphicon-user'> </span> <img src="~/images/editicon.png" width="20" height="20" /> </a>);
+                                    columns.Add()
+                                    .Encoded(false)
+                                    .Sanitized(false)
+                                    .SetWidth(40)
+                                    .RenderValueAs(o => @<a href="#" onclick='hideme(123); DeleteRecord(@o.Recid);' data-modal='' id="sd" name="sd" data-id="@o.Recid" class="btn btn-success ss"> Delete <span class='glyphicon  glyphicon-user'> </span> <img src="~/images/delicon.png" width="20" height="20" /> </a>);
 
-                    }).Sortable().Filterable().Empty("No data Found").Pageable(paper =>
-                    {
-                        paper.CurrentPage = 1;
-                        paper.RowsPerPage = 10;
-                        paper.PagesToDisplay = 5;
-                    })
+   @*columns.Add(model => $"<a  onclick='hideme(123);' data-modal='' data-id=" + @model.RegId + " href='#' name=\"ss\" id=\"ss\" asp-action=\"PR\" asp-route-id=\"@model.Regid\" class=\"btn btn-success ss\" '> Update <span class='glyphicon      glyphicon-user'> </span> </a>").Encoded(false);*@
+                                
+
+                        }).Sortable().Filterable()
                     )
 
                
@@ -147,16 +128,16 @@
                             </div>
                         </div>
                         <script>
-                            function DeleteRecord() {
-                                var Recid = $(sd).data('id');
-                                alert("recid " + Recid);
+                            function DeleteRecord(lRecId) {
+                                //var Recid = $(sd).data('id');
+                                alert("recid " + lRecId);
                                 alert('here');
                                 $.ajax({
-                                    type: 'POST',
+                                    type: 'GET',
                                     url: 'https://localhost:7172/api/Subscriptionpercs/DeleteSubsPerc',
                                     contentType: 'application/json; charset=utf-8',
                                     dataType: "json",
-                                    data: { Recid: Recid },//lRecId
+                                    data: { Recid: lRecId },
                                     success: function (result) {
                                         alert(" subscription% has been deleted ");
                                         location.reload();
@@ -172,7 +153,7 @@
                             function EditSubsPercent() {
 
                                 var formData = new FormData();
-                               alert( $("#Appowner").val());
+                               
                                 formData.append("Appowner", $("#Appowner").val());
                                 formData.append("Vendor", $("#Vendor").val());
                                 formData.append("Customer", $("#Customer").val());
@@ -182,6 +163,7 @@
                                 formData.append("Recid", $("#Recid").val());
                                 formData.append("RegId", $("#RegId").val());
                                 alert("regid "+ $("#RegId").val());
+                                alert("Vendor " + $("#Vendor").val());
                                 alert('here');
 
                                 $.ajax({
@@ -210,4 +192,3 @@
     </div>
 
 </section>
-

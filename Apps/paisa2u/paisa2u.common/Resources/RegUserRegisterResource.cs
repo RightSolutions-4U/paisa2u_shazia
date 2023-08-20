@@ -20,6 +20,7 @@
         Boolean Autorenewal,
         string Qrpicture,
         string PasswordSalt,
-        string PasswordHash
+        string PasswordHash,
+        string vendorfilename
     );
 }

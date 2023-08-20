@@ -6,7 +6,8 @@ namespace paisa2u.common.Resources
         int Vendorid,
         int Regid,
         DateTime Endate,
-        string Enuser
+        string Enuser,
+        string pictureurl
 
     );
 }

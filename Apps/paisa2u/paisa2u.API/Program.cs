@@ -36,6 +36,7 @@ builder.Services.AddScoped<ISubscriptionService, SubscriptionService>();
 //Added by Shazia on JUl 23- Aug 2, 2023 register services
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ITransactionsService, TransactionsService>();
+builder.Services.AddScoped<ISubscriptionSetupService, SubscriptionSetupService>();
 
 
 Log.Logger=new LoggerConfiguration().WriteTo.File("C:\\users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\Logs\\log*.log", rollingInterval:RollingInterval.Day).CreateLogger();

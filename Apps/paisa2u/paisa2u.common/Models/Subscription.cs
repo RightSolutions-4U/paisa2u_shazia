@@ -9,15 +9,15 @@ public partial class Subscription
 
     public string Subtype { get; set; } = null!;
 
-    public int? Subfee { get; set; }
+    public int? Subfee { get; set; } 
 
-    public float? Appowner { get; set; }
+    public double? Appowner { get; set; }
 
-    public float? Vendor { get; set; }
+    public double? Vendor { get; set; }
 
-    public float? Subvendor { get; set; }
+    public double? Subvendor { get; set; }
 
-    public float? Customer { get; set; }
+    public double? Customer { get; set; }
 
     public DateTime? Endate { get; set; }
 

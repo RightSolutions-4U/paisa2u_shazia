@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 using paisa2u.common.Models;
 using paisa2u.common.Resources;
 using paisa2u.common.Services;
@@ -72,7 +73,7 @@ namespace paisa2u.API.Controllers
             {
                 Subscriptionperc subscriptionperc = new Subscriptionperc();
                 subscriptionperc.Endate = DateTime.Now;
-                subscriptionperc.Enuser = "Shazia";/*TempData["Username"];*/
+                subscriptionperc.Enuser = Request.Cookies["username"]; // set in login of the form
                 var Appowner = collection["Appowner"];
                 var Vendor = collection["Vendor"];
                 var Customer = collection["Customer"];
@@ -81,18 +82,18 @@ namespace paisa2u.API.Controllers
                 subscriptionperc.Vendor = float.Parse(Vendor);
                 subscriptionperc.Customer = float.Parse(Customer);
                 subscriptionperc.Subvendor = float.Parse(Subvendor);
-
+                
 
                 var subscription = new SubscriptionResource
                 (
                 subscriptionperc.RecId,
-                6,
+                int.Parse(collection["RegId"]),
                 float.Parse(collection["Appowner"]),
                 float.Parse(collection["Vendor"]),
-                float.Parse(collection["Customer"]),
                 float.Parse(collection["Subvendor"]),
-                DateTime.Now,
-                "shazia"
+                float.Parse(collection["Customer"]),
+                 DateTime.Now,
+                subscriptionperc.Enuser
 
                 );
 
@@ -153,14 +154,14 @@ namespace paisa2u.API.Controllers
 
 
         // GET: Subscriptionpercs/Delete/5
-        [HttpPost("DeleteSubsPerc")]
-        public async Task<ActionResult<SubscriptionResource>> DeleteSubsPerc(string Recid, CancellationToken cancellationToken)
+        [HttpGet("DeleteSubsPerc")]
+        public async Task<ActionResult<SubscriptionResource>> DeleteSubsPerc(int Recid, CancellationToken cancellationToken)
         {
              try
                 
                 {
              
-                var response = await _subscriptionService.DeleteSubsPercent(int.Parse(Recid), cancellationToken);
+                var response = await _subscriptionService.DeleteSubsPercent(Recid, cancellationToken);
                     return Ok(response);
             }
             catch (Exception e)

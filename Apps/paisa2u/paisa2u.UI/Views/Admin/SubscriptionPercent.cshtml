@@ -4,95 +4,60 @@
 }
 @using GridMvc
 @using GridCore
+@using System.Web
 @using paisa2u.common.Resources
 @addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
-@using NonFactors.Mvc.Grid;
+@*@using NonFactors.Mvc.Grid;*@
 @model IEnumerable<RegUserResource>
-
 <section class="py-5" id="SubscriptionResource">
-    <script>
-       
+    
+   @* <script>
+        $( document ).ready(function() {
+            alert("doc ready");
+            $('.ss').click(function () {
+                alert("click");
+                var Recid = $(ss).data('id');
+                alert ("on click " + Recid)
+                document.getElementById("#RegId").innerHTML = Recid;
+                alert("reg " + document.getElementById("#RegId").innerHTML);
+            });
 
-        function AddSubs() {
-                       
-                var Appowner = $("#Appowner").val();
-                var formData = new FormData();
-                formData.append("Appowner", $("#Appowner").val());
-                formData.append("Vendor", $("#Vendor").val());
-                formData.append("Customer", $("#Customer").val());
-                formData.append("Subvendor", $("#Subvendor").val());
-                alert(formData);
-                $.ajax({
-                    type: "POST",
-                    url: "https://localhost:7172/api/Subscriptionpercs/AddSubsPercent",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    success: function (data) {
-                    location.reload();
-
-
-                    },
-                    failure: function (data) {
-                        alert('failure in getting vendors');
-                        alert(data.responseText);
-                    },
-                    error: function (xhr, ajaxOptions, thrownError) {
-                        alert(xhr.status);
-                        alert(thrownError);
-                    } //error
-
-                });//ajax closure
-            }//function Add closes
-            
-    </script>
+        });
+    </script>*@
     <div class="container" style="top: 20px;">  
     <div class="row flex-center h-100" id="defaultdiv">
         <div class="col-md-12">
             <div class="row">
-                <h5 style="text-align:center"> @ViewBag.Admin</h5>
-                @(
-                    Html.Grid(Model).Build(columns =>
-                    {
-                        columns.Add(model => Html.CheckBox("Check_" + model.Regid)).Titled(Html.CheckBox("CheckAll"));
-                        columns.Add(model => model.Endate).Titled("Registration Date");
-                        columns.Add(model => model.Regid).Titled("Registration Id");
-                        columns.Add(model => model.Firstname).Titled("First Name");
-                        columns.Add(model => model.Middlename).Titled("Middle Name");
-                        columns.Add(model => model.Lastname).Titled("Last Name");
-                        columns.Add(model => $"<a onclick='hideme(AddSubs);' href='' asp-route-id=\"@model.Regid\" class=\"btn     btn-success\" ' > Add <span class='glyphicon'> </span> </a>").Encoded(false).Titled("Add subscription");
-                        columns.Add(model => $"<a  data-modal='' data-id=\"\"     href='Delete'      id=\"ss\"  asp-action=\"PR\" asp-route-id=\"@model.Regid\" class=\"btn     btn-success\" '> Delete <span class='glyphicon      glyphicon-user'> </span> </a>").Encoded(false).Titled("Delete");
-                        //columns.Add(model => $"<a ' data-modal=' ' data-id=\"\"   href=' " + Url.Action(" AddSubsPercentview", "Admin") + "' id=\" ss\" asp-action=\"PR\" asp-route-id=\"@item.Id\" class=\"btn btn-success\" ' > Add <span class='glyphicon      glyphicon-user'> </span> </a>").Encoded(false).Titled("Add subscription");
-                    }).Sortable().Filterable().Empty("No data Found").Pageable(pager =>
-                    {
-                        //pager.PageSizes = new Dictionary<Int32, String> { { 0, "All" }, { 2, "2" }, { 4, "4" } };
-                        pager.ShowPageSizes = true;
-                        pager.PagesToDisplay = 3;
-                        pager.CurrentPage = 2;
-                        pager.RowsPerPage = 6;
-                    })
-                    )
-                
+                    <h5 style="text-align:center"> @ViewBag.Admin</h5>
+                    @(
+                            Html.Grid(Model).Columns(columns =>
+                            {
+                                columns.Add(model => model.Firstname).Titled("First Name");
+                                columns.Add(model => model.Lastname).Titled("Last Name");
+                                columns.Add(model => model.Endate).Titled("Entry date");
+                                columns.Add(model => model.Enuser).Titled("Entry user");
+                                columns.Add(model => model.Regid).Titled("Registration Id");
+                                columns.Add()
+                                .Encoded(false)
+                                .Sanitized(false)
+                                .SetWidth(40)
+                            .RenderValueAs(o => @<a href="#" onclick='hideme(@o.Regid);' data-modal='' id="ss" name="ss" data-id="@o.Regid" class="btn btn-success ss"> Add <span class='glyphicon  glyphicon-user'> </span> <img src="~/images/editicon.png" width="20" height="20" /> </a>);
 
-                    <script>
-                    document.getElementById("CheckAll").addEventListener("change", function () {
-                    document.querySelectorAll("[id^='Check_'").forEach(checkbox => checkbox.checked = this.checked);
+                            }).Sortable().Filterable()
+                        )
 
-                    });
-                </script>
-            </div>
+                </div>
         </div>
     </div>
 
-    <div style="display= "none" id="AddSubs" name="AddSubs">
+    <div style="display= "block" id="AddSubs" name="AddSubs">
         <h1> Add Subscription</h1>
         <button onclick="hideme('Cancel')" id="gr_cancel" name="gr_cancel" class="btn btn-lg btn-success rounded g-py-13 g-px-25 trn gr_spinner_btn" data-trn="register" type="submit">
             Cancel
         </button>
         <div class="col-md-6 con-left">
-            <input type="hidden" id="RegId" name="RegId" value="3">
+                <input type="text" id="RegId" name="RegId">
+                <input type="hidden" id="Enuser" name="Enuser">
             <div class="form-group mb-4" style="text-align:left">
                 <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="Appowner" for="Appowner">% for App owner <span class="fw-color-red">*</span>:</label>
                 <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_Appowner" id="Appowner" name="Appowner" type="text" placeholder="Enter % for App owner">
@@ -111,16 +76,59 @@
             </div>
             <div class="row justify-content-between">
                 <div class="col-md-4 col-sm-12 align-self-center mb-4">
-                    <button id="Add_subs" class="btn btn-lg btn-success rounded g-py-13 g-px-25 trn gr_spinner_btn" data-trn="Add_subs" onclick="AddSubs();">
+                    <button id="Add_subs" class="btn btn-lg btn-success rounded g-py-13 g-px-25 trn gr_spinner_btn" data-trn="Add_subs" onclick="AddSubs(1);">
                         AddPercent
                         <span class="spinner"></span>
                     </button>
                 </div>
 
             </div>
+                
+        </div>
+           
+        </div>
+        <script>
+            var a = document.getElementById("RegId");
+            function hideme(RegId) {
+               
+                a.setAttribute("value", RegId);
+                
+            }
+            function AddSubs(reg) {
 
-        </div>
-        </div>
+                var formData = new FormData();
+                formData.append("Appowner", $("#Appowner").val());
+                formData.append("Vendor", $("#Vendor").val());
+                formData.append("Customer", $("#Customer").val());
+                formData.append("Subvendor", $("#Subvendor").val());
+                formData.append("RegId", $("#RegId").val());
+                formData.append("Enuser", $("#Enuser").val());
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://localhost:7172/api/Subscriptionpercs/AddSubsPercent",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        location.reload();
+
+                    },
+                    failure: function (data) {
+                        alert('failure in adding percentage');
+                        alert(data.responseText);
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert(xhr.status);
+                        alert(thrownError);
+                    } //error
+
+                });//ajax closure
+
+            }//function Add closes
+        </script>
     </div>
 </section>
 

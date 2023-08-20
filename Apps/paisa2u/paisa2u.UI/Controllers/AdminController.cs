@@ -16,20 +16,46 @@ namespace paisa2u.UI.Controllers
         {
             return View("Admin");
         }
-        //[HttpGet("GetSubsPercentAll")]
-        //public async Task<ActionResult<RegUserResource>> GetSubsPercentAll()
+        [HttpGet("GetSubsPercentAll")]
+        public async Task<ActionResult<RegUserResource>> GetSubsPercentAll()
+        {
+            List<RegUserResource> regUserResource = new List<RegUserResource>();
+            try
+            {
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Clear();
+                StringContent content = new StringContent(JsonConvert.SerializeObject(regUserResource), Encoding.UTF8, "application/json");
+                using (var response = await client.PostAsync("https://localhost:7172/api/Subscriptionpercs/GetSubsPercentAll", content))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    var a = JsonConvert.DeserializeObject<RegUserResource[]>(apiResponse);
+                    ViewBag.Admin = "Registered Users not having subscription%";
+                    return View("SubscriptionPercent", a);
+                }
+
+            }
+            catch (Exception e)
+            {
+                ViewBag.Admin = "No records exist";
+                return View("Admin");
+            }
+
+        }
+
+        //[HttpGet("GetSubsPercentAllSubs")]
+        //public async Task<ActionResult<SubscriptionResource>> GetSubsPercentAllSubs()
         //{
-        //    List<RegUserResource> regUserResource = new List<RegUserResource>();
+        //    List<SubscriptionResource> subscriptionResources = new List<SubscriptionResource>();
         //    try
         //    {
         //        var client = new HttpClient();
         //        client.DefaultRequestHeaders.Clear();
-        //        StringContent content = new StringContent(JsonConvert.SerializeObject(regUserResource), Encoding.UTF8, "application/json");
-        //        using (var response = await client.PostAsync("https://localhost:7172/api/Subscriptionpercs/GetSubsPercentAll", content))
+        //        StringContent content = new StringContent(JsonConvert.SerializeObject(subscriptionResources), Encoding.UTF8, "application/json");
+        //        using (var response = await client.PostAsync("https://localhost:7172/api/Subscriptionpercs/GetSubsPercentAllSubs", content))
         //        {
         //            string apiResponse = await response.Content.ReadAsStringAsync();
-        //            var a = JsonConvert.DeserializeObject<RegUserResource[]>(apiResponse);
-        //            ViewBag.Admin = "Registered Users not having subscription%";
+        //            var a = JsonConvert.DeserializeObject<SubscriptionResource[]>(apiResponse);
+        //            ViewBag.Admin = "subscription% does not exist";
         //            return View("SubsPercentUpdDel", a);
         //        }
 
@@ -41,32 +67,6 @@ namespace paisa2u.UI.Controllers
         //    }
 
         //}
-
-        [HttpGet("GetSubsPercentAllSubs")]
-        public async Task<ActionResult<SubscriptionResource>> GetSubsPercentAllSubs()
-        {
-            List<SubscriptionResource> subscriptionResources = new List<SubscriptionResource>();
-            try
-            {
-                var client = new HttpClient();
-                client.DefaultRequestHeaders.Clear();
-                StringContent content = new StringContent(JsonConvert.SerializeObject(subscriptionResources), Encoding.UTF8, "application/json");
-                using (var response = await client.PostAsync("https://localhost:7172/api/Subscriptionpercs/GetSubsPercentAllSubs", content))
-                {
-                    string apiResponse = await response.Content.ReadAsStringAsync();
-                    var a = JsonConvert.DeserializeObject<SubscriptionResource[]>(apiResponse);
-                    ViewBag.Admin = "subscription% does not exist";
-                    return View("SubsPercentUpdDel", a);
-                }
-
-            }
-            catch (Exception e)
-            {
-                ViewBag.Admin = "No records exist";
-                return View("Admin");
-            }
-
-        }
 
         //[HttpGet("GetSubsPercentByRegId")]
         //public async Task<ActionResult<SubscriptionResource>> GetSubsPercentByRegId(int RegId, CancellationToken cancellationtoken)
@@ -102,56 +102,56 @@ namespace paisa2u.UI.Controllers
         //    Subscriptionperc subscriptionperc = new Subscriptionperc();
         //    subscriptionperc.Endate = DateTime.Now;
         //    subscriptionperc.Enuser = "Shazia";
-        //    subscriptionperc.RegId = 6;
+        //    subscriptionperc.RegId = Regid;
         //    return View("AddSubsPercent", subscriptionperc);
         //}
-        //[HttpGet("AddSubsPercent")]
-        //public async Task<ActionResult<SubscriptionResource>> AddSubsPercent(IFormCollection collection)
-        //{
-        //    try
-        //    {
+        [HttpPost("AddSubsPercent")]
+        public async Task<ActionResult<SubscriptionResource>> AddSubsPercent(IFormCollection collection)
+        {
+            try
+            {
 
-        //        Subscriptionperc subscriptionperc = new Subscriptionperc();
-        //        subscriptionperc.Endate = DateTime.Now;
-        //        subscriptionperc.Enuser = "Shazia";/*TempData["Username"];*/
-        //        var Appowner = collection["Appowner"];
-        //        var Vendor = collection["Vendor"];
-        //        var Customer = collection["Customer"];
-        //        var Subvendor = collection["Subvendor"];
-        //        subscriptionperc.Appowner = float.Parse(Appowner);
-        //        subscriptionperc.Vendor = float.Parse(Vendor);
-        //        subscriptionperc.Customer = float.Parse(Customer);
-        //        subscriptionperc.Subvendor = float.Parse(Subvendor);
+                Subscriptionperc subscriptionperc = new Subscriptionperc();
+                subscriptionperc.Endate = DateTime.Now;
+                subscriptionperc.Enuser = (string)TempData["Username"];
+                var Appowner = collection["Appowner"];
+                var Vendor = collection["Vendor"];
+                var Customer = collection["Customer"];
+                var Subvendor = collection["Subvendor"];
+                subscriptionperc.Appowner = float.Parse(Appowner);
+                subscriptionperc.Vendor = float.Parse(Vendor);
+                subscriptionperc.Customer = float.Parse(Customer);
+                subscriptionperc.Subvendor = float.Parse(Subvendor);
 
-        //        StringContent content = new StringContent(JsonConvert.SerializeObject(subscriptionperc), Encoding.UTF8, "application/json");
-        //        var client = new HttpClient();
-        //        client.DefaultRequestHeaders.Clear();
-        //        using (var response = await client.PostAsync("https://localhost:7172/api/Subscriptionpercs/AddSubsPercent", content))
-        //        {
-        //            string apiResponse = await response.Content.ReadAsStringAsync();
+                StringContent content = new StringContent(JsonConvert.SerializeObject(subscriptionperc), Encoding.UTF8, "application/json");
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Clear();
+                using (var response = await client.PostAsync("https://localhost:7172/api/Subscriptionpercs/AddSubsPercent", content))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
 
-        //            var a = JsonConvert.DeserializeObject<Subscriptionperc>(apiResponse);
-        //            if (a.RegId == null)
-        //            {
-        //                ViewBag.message = "Record was not added successfully";
-        //            }
-        //            else
-        //            {
-        //                ViewBag.message = "Record Added Successfully";
+                    var a = JsonConvert.DeserializeObject<Subscriptionperc>(apiResponse);
+                    if (a.RegId == null)
+                    {
+                        ViewBag.message = "Record was not added successfully";
+                    }
+                    else
+                    {
+                        ViewBag.message = "Record Added Successfully";
 
-        //            }
-        //        }
-        //        return NoContent();
-        //        //return View("../Home/Index");
+                    }
+                }
+                return NoContent();
+                //return View("../Home/Index");
 
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        ViewBag.Admin = "Invalid UserId or Password with ENV";
-        //        return View("../Home/Index");
-        //    }
+            }
+            catch (Exception e)
+            {
+                ViewBag.Admin = "Invalid UserId or Password with ENV";
+                return View("../Home/Index");
+            }
 
-        //}
+        }
 
     }//class
 }//namespace

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Azure;
+using Microsoft.EntityFrameworkCore;
 using paisa2u.common.Models;
 using paisa2u.common.Resources;
 using System;
@@ -9,9 +10,16 @@ namespace paisa2u.common.Services
     {
 
         private readonly PaisaDbContext _context;
-        public SubscriptionService(PaisaDbContext context)
+        private readonly ITransactionsService _transactionsService;
+        private readonly IRegUserService _regUserService;
+        private readonly ISubscriptionSetupService _subscriptionSetupService;
+        public SubscriptionService(PaisaDbContext context, ITransactionsService transactionsService, IRegUserService regUserService,
+                                    ISubscriptionSetupService subscriptionSetupService)  
         {
             _context = context;
+            _transactionsService = transactionsService; 
+            _regUserService = regUserService;
+            _subscriptionSetupService = subscriptionSetupService;
         }
 
         public async Task<SubscriptionResource> AddSubsPercent(SubscriptionResource resource, CancellationToken cancellationToken)
@@ -31,6 +39,32 @@ namespace paisa2u.common.Services
             try
             {
                 await _context.SaveChangesAsync(cancellationToken);
+                //call regtype% for 
+                var regUserResource = await _regUserService.GetRegType(resource.RegId, cancellationToken);
+                //call subsfee
+                var subscriptionsetup = await _subscriptionSetupService.GetSubscriptionBySubType(regUserResource.Substype, cancellationToken);
+                
+                double TotAmount = 0;
+                //call add transaction to distribute revenue 1. Vendor
+                var transactionresource = new TransactionsResource
+                        (0, resource.RegId, (resource.Vendor*subscriptionsetup.Subfee)/100, resource.Endate, resource.Enuser, "C");
+                var resulttrans = await _transactionsService.AddTransaction(transactionresource, cancellationToken);
+                TotAmount = TotAmount + resulttrans.amount;
+                //call add transaction to distribute revenue 2. Subvendor
+                var transactionresourceSV = new TransactionsResource
+                       (0, resource.RegId, (resource.Subvendor * subscriptionsetup.Subfee) / 100, resource.Endate, resource.Enuser, "C");
+                var resulttransSV = await _transactionsService.AddTransaction(transactionresourceSV, cancellationToken);
+                TotAmount = TotAmount + resulttransSV.amount;
+                //call add transaction to distribute revenue 3. Customer / referredby
+                var transactionresourceC = new TransactionsResource
+                       (0, resource.RegId, (resource.Customer * subscriptionsetup.Subfee) / 100, resource.Endate, resource.Enuser, "C");
+                var resulttransC = await _transactionsService.AddTransaction(transactionresourceC, cancellationToken);
+                TotAmount = TotAmount + resulttransC.amount;
+                //call add transaction to deduct total amount from 4. appowner 
+                var transactionresourceA = new TransactionsResource
+                       (0, resource.RegId, TotAmount, resource.Endate, resource.Enuser, "D");
+                var resulttransA = await _transactionsService.AddTransaction(transactionresourceA, cancellationToken);
+                TotAmount = TotAmount + resulttransC.amount;
 
             }
             catch (Exception ex)
@@ -142,7 +176,8 @@ namespace paisa2u.common.Services
                     User.Autorenewal,
                     User.Qrpicture,
                     User.PasswordSalt,
-                    User.PasswordHash
+                    User.PasswordHash,
+                    User.vendorfilename
                     )
                    
                 );

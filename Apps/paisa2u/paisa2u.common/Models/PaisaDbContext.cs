@@ -61,11 +61,11 @@ public partial class PaisaDbContext : DbContext
         modelBuilder
             .Entity<ProductByVendor>()
             .ToView(nameof(GetProductByVendor))
-            .HasKey(t => t.Vendorid);
+            .HasKey(t => t.NID);
         modelBuilder
             .Entity<ProductByVendor>()
             .ToView(nameof(GetAllProductsByVendor))
-            .HasKey(t => t.Vendorid);
+            .HasKey(t => t.NID);
 
         modelBuilder.Entity<Address>(entity =>
         {

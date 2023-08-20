@@ -31,8 +31,7 @@ namespace paisa2u.UI.Controllers
 
                 var a = JsonConvert.DeserializeObject<ProductByVendor[]>(apiResponse);
                 return View("../Home/Index", a);
-             
-
+ 
             }
         }
         //by Shazia on Aug 2, 2023
@@ -44,7 +43,7 @@ namespace paisa2u.UI.Controllers
             //TempData["RegId"].ToString()
                 var queryParams = new Dictionary<string, string>()
                 {
-                    {"Regid","6" }
+                    {"Regid",Request.Cookies["regid"] }
                 };
                  string url = QueryHelpers.AddQueryString("https://localhost:7172/api/Users/GetAllReferralsByRegid", queryParams);
                  using (var response = await client1.GetAsync(url))
@@ -70,7 +69,7 @@ namespace paisa2u.UI.Controllers
             //TempData["RegId"].ToString()
             var queryParams = new Dictionary<string, string>()
                 {
-                    {"Regid","6" }
+                    {"Regid",Request.Cookies["regid"] }
                 };
             string url = QueryHelpers.AddQueryString("https://localhost:7172/api/Transactions/GetTransactionsWithRegId", queryParams);
             using (var response = await client1.GetAsync(url))
@@ -86,11 +85,12 @@ namespace paisa2u.UI.Controllers
         {
             var client1 = new HttpClient();
             client1.DefaultRequestHeaders.Clear();
-            //TempData["RegId"].ToString()
+            TempData["RegId"].ToString();
             var queryParams = new Dictionary<string, string>()
                 {
-                    {"Regid","6" }
+                    {"Regid",Request.Cookies["regid"] }
                 };
+               
             string url = QueryHelpers.AddQueryString("https://localhost:7172/api/Transactions/GetWallet", queryParams);
             using (var response = await client1.GetAsync(url))
             {

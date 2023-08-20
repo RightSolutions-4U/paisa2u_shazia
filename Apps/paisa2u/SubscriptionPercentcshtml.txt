@@ -1,0 +1,122 @@
+@*Added by Shazia on Aug 8, 2023 *@
+@{
+    ViewData["Title"] = "List of users not subscribed";
+}
+@using GridMvc
+@using GridCore
+@using System.Web
+@using paisa2u.common.Resources
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+@*@using NonFactors.Mvc.Grid;*@
+@model IEnumerable<RegUserResource>
+<section class="py-5" id="SubscriptionResource">
+    <script>
+        function hideme(RegId) {
+            alert('inside hideme');
+        }
+        function GetPercById(RegId) {
+            alert('inside');
+            $("#RegId").val(RegId);
+            
+        }
+        function AddSubs() {
+
+            var formData = new FormData();
+            formData.append("Appowner", $("#Appowner").val());
+            formData.append("Vendor", $("#Vendor").val());
+            formData.append("Customer", $("#Customer").val());
+            formData.append("Subvendor", $("#Subvendor").val());
+            formData.append("RegId", $("#RegId").val());
+
+            alert(formData);
+            $.ajax({
+                type: "POST",
+                url: "https://localhost:7172/api/Subscriptionpercs/AddSubsPercent",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    location.reload();
+
+
+                },
+                failure: function (data) {
+                    alert('failure in getting vendors');
+                    alert(data.responseText);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                } //error
+
+            });//ajax closure
+
+        }//function Add closes
+
+    </script>
+    <div class="container" style="top: 20px;">  
+    <div class="row flex-center h-100" id="defaultdiv">
+        <div class="col-md-12">
+            <div class="row">
+                    <h5 style="text-align:center"> @ViewBag.Admin</h5>
+                    @(
+                            Html.Grid(Model).Columns(columns =>
+                            {
+                                columns.Add(model => model.Firstname).Titled("First Name");
+                                columns.Add(model => model.Lastname).Titled("Last Name");
+                                columns.Add(model => model.Endate).Titled("Entry date");
+                                columns.Add(model => model.Enuser).Titled("Entry user");
+                                columns.Add(model => model.Regid).Titled("Registration Id");
+                                columns.Add()
+                                .Encoded(false)
+                                .Sanitized(false)
+                                .SetWidth(40)
+                                .RenderValueAs(o => @<a href="#" onclick='hideme(123); GetPercById(@o.RegId);' data-modal='' id="ss" name="ss" data-id="@o.RegId" class="btn btn-success ss"> Add <span class='glyphicon  glyphicon-user'> </span> <img src="~/images/editicon.png" width="20" height="20" /> </a>);
+
+                            }).Sortable().Filterable()
+                        )
+
+                </div>
+        </div>
+    </div>
+
+    <div style="display= "none" id="AddSubs" name="AddSubs">
+        <h1> Add Subscription</h1>
+        <button onclick="hideme('Cancel')" id="gr_cancel" name="gr_cancel" class="btn btn-lg btn-success rounded g-py-13 g-px-25 trn gr_spinner_btn" data-trn="register" type="submit">
+            Cancel
+        </button>
+        <div class="col-md-6 con-left">
+            <input type="hidden" id="RegId" name="RegId">
+            <div class="form-group mb-4" style="text-align:left">
+                <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="Appowner" for="Appowner">% for App owner <span class="fw-color-red">*</span>:</label>
+                <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_Appowner" id="Appowner" name="Appowner" type="text" placeholder="Enter % for App owner">
+            </div>
+            <div class="form-group mb-4">
+                <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="Vendor" for="Vendor">% for Vendor <span class="fw-color-red">*</span>:</label>
+                <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_Vendor" id="Vendor" name="Vendor" type="text" placeholder="Enter % for Vendor">
+            </div>
+            <div class="form-group mb-4">
+                <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="SubVendor" for="SubVendor">% for SubVendor<span class="fw-color-red">*</span>:</label>
+                <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_SubVendor" id="Subvendor" name="Subvendor" type="text" placeholder="Enter % for SubVendor">
+            </div>
+            <div class="form-group mb-4">
+                <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="Customer" for=">Customer">% for Customer <span class="fw-color-red">*</span>:</label>
+                <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_Customer" id="Customer" name="Customer" type="text" placeholder="Enter % for Customer">
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-md-4 col-sm-12 align-self-center mb-4">
+                    <button id="Add_subs" class="btn btn-lg btn-success rounded g-py-13 g-px-25 trn gr_spinner_btn" data-trn="Add_subs" onclick="AddSubs();">
+                        AddPercent
+                        <span class="spinner"></span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+    </div>
+</section>
+

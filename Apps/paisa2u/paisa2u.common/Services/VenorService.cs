@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Drawing;
+using System.Linq;
 
 namespace paisa2u.common.Services
 {
@@ -24,7 +25,8 @@ namespace paisa2u.common.Services
             {
                 RegId = resource.Regid,
                 Endate = resource.Endate,
-                Enuser = resource.Enuser
+                Enuser = resource.Enuser,
+                pictureurl = resource.pictureurl
             };
             await _context.Vendors.AddAsync(vendor, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
@@ -48,17 +50,7 @@ namespace paisa2u.common.Services
             return AllProducts;
 
         }
-        public async Task<List<ProductByVendor>> GetAllProductsByVendor(string vendorid,CancellationToken cancellationToken)
-        {
-            var SingleProductByVendor1 = await _context
-                            .GetAllProductsByVendor
-                            .Where(t => t.Vendorid.ToString() == vendorid)
-                            .ToListAsync();
-
-            return SingleProductByVendor1;
-
-        }
-
+      
         public async Task<List<ProductByVendor>> GetAllProductsByCat(int catid, CancellationToken cancellationToken)
         {
             var SingleProductByVendor1 = await _context
@@ -93,6 +85,13 @@ namespace paisa2u.common.Services
             return vendors;
         }
 
-        
+        public async Task<List<ProductByVendor>> GetAllProductsByVendor(string vendorid, CancellationToken cancellationToken)
+        {
+            var AllProductByVendor = await _context
+                            .GetAllProductsByVendor
+                            .Where(t => t.Vendorid.ToString() == vendorid)
+                            .ToListAsync();
+            return AllProductByVendor;
+        }
     }
 }
