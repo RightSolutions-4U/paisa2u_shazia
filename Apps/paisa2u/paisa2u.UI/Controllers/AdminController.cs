@@ -96,15 +96,15 @@ namespace paisa2u.UI.Controllers
         //    }
 
         //}
-        //[HttpGet("AddSubsPercentview")]
-        //public ActionResult<SubscriptionResource> AddSubsPercentview(int Regid)
-        //{
-        //    Subscriptionperc subscriptionperc = new Subscriptionperc();
-        //    subscriptionperc.Endate = DateTime.Now;
-        //    subscriptionperc.Enuser = "Shazia";
-        //    subscriptionperc.RegId = Regid;
-        //    return View("AddSubsPercent", subscriptionperc);
-        //}
+         //[HttpGet("AddSubsPercentview")]
+         //public ActionResult<SubscriptionResource> AddSubsPercentview(int Regid)
+         //{
+         //    Subscriptionperc subscriptionperc = new Subscriptionperc();
+         //    subscriptionperc.Endate = DateTime.Now;
+         //    subscriptionperc.Enuser = "Shazia";
+         //    subscriptionperc.RegId = Regid;
+         //    return View("AddSubsPercent", subscriptionperc);
+         //}
         [HttpPost("AddSubsPercent")]
         public async Task<ActionResult<SubscriptionResource>> AddSubsPercent(IFormCollection collection)
         {

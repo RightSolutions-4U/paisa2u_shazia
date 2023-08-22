@@ -45,6 +45,13 @@ public partial class PaisaDbContext : DbContext
     public virtual DbSet<ProductByVendor> GetProductByVendor { get; set; }
 
     public virtual DbSet<ProductByVendor> GetAllProductsByVendor { get; set; }
+    //for paging by Shazia on Aug 21, 2023
+    public virtual DbSet<ProductByVendor> GetProductByVendorP { get; set; }
+    public virtual DbSet<ProductByVendor> GetAllProductsByVendorP { get; set; }
+    public virtual DbSet<ProductByVendor> GetAllProductsByCatP { get; set; }
+    public virtual DbSet<VendorList> GetVendorsP { get; set; }
+
+    //changes end here
     public virtual DbSet<VendorList> VendorList { get; set; }
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -54,6 +61,25 @@ public partial class PaisaDbContext : DbContext
         /*modelBuilder
             .UseCollation("utf8mb4_0900_ai_ci")
             .HasCharSet("utf8mb4");*/
+
+        //by Shazia on Aug 21, 2023 for paging
+        modelBuilder
+            .Entity<ProductByVendor>()
+            .ToView(nameof(GetProductByVendorP))
+            .HasKey(t => t.Vendorid);
+        modelBuilder
+          .Entity<ProductByVendor>()
+          .ToView(nameof(GetAllProductsByVendorP))
+          .HasKey(t => t.Vendorid);
+        modelBuilder
+          .Entity<ProductByVendor>()
+          .ToView(nameof(GetAllProductsByCatP))
+          .HasKey(t => t.Vendorid);
+        modelBuilder
+          .Entity<VendorList>()
+          .ToView(nameof(GetVendorsP))
+          .HasKey(t => t.Vendorid);
+        //changes end here 
         modelBuilder
             .Entity<VendorList>()
             .ToView(nameof(VendorList))
@@ -397,8 +423,8 @@ public partial class PaisaDbContext : DbContext
           
         });
 
-        //Added by Mohtashim on 27-06-2023
-        modelBuilder.Entity<VendorProduct>()
+    //Added by Mohtashim on 27-06-2023
+    modelBuilder.Entity<VendorProduct>()
         .HasKey(bc => new { bc.Vendorid, bc.Productid });
         modelBuilder.Entity<VendorProduct>()
             .HasOne(bc => bc.Vendor)

@@ -18,6 +18,7 @@
         public string Dicountcondition { get; set; }
         public int Catid { get; set; }
         public string Catdesc { get; set; }
+        public string pictureurl { get; set; }
 
     }
 }

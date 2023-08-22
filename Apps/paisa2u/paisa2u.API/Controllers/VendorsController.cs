@@ -32,6 +32,7 @@ namespace paisa2u.API.Controllers
             return await _vendorService.GetAllProductsOfAllVendor(cancellationToken);
 
         }
+        
 
         [HttpGet("GetAllProductsByVendor")]
         public async Task<List<ProductByVendor>> GetAllProductsByVendor(string vendorid,CancellationToken cancellationToken)
@@ -57,6 +58,40 @@ namespace paisa2u.API.Controllers
         public async Task<ActionResult<IEnumerable<VendorList>>> GetVendor()
         {
             var a = await _vendorService.GetVendors();
+            var jsonString = JsonSerializer.Serialize(a);
+            return Ok(jsonString);
+        }
+
+        //by mohtashim on paging
+        [HttpGet("GetSingleProductByVendorP")]
+        public async Task<ActionResult<ProductByVendorResponse>> GetSingleProductByVendorP(int page)
+        {
+            return await _vendorService.GetSingleProductByVendorP(page);
+
+        }
+        //paging on Aug 21,2023 by Shazia
+        [HttpGet("GetAllProductsOfAllVendorP")]
+        public async Task<ActionResult<ProductByVendorResponse>> GetAllProductsOfAllVendorP(int page)
+        {
+            return await _vendorService.GetAllProductsOfAllVendorP(page);
+
+        }
+        [HttpGet("GetAllProductsByVendorP")]
+        public async Task<ActionResult<ProductByVendorResponse>> GetAllProductsByVendorP(string vendorid, int page)
+        {
+            return await _vendorService.GetAllProductsByVendorP(vendorid, page);
+
+        }
+        [HttpGet("GetAllProductsByCatP")]
+        public async Task<ActionResult<ProductByVendorResponse>> GetAllProductsByCatP(int catid , int page)
+        {
+            return await _vendorService.GetAllProductsByCatP(catid, page);
+
+        }
+        [HttpGet("GetVendorP")]
+        public async Task<ActionResult<IEnumerable<VendorList>>> GetVendorsP(int page)
+        {
+            var a = await _vendorService.GetVendorsP(page);
             var jsonString = JsonSerializer.Serialize(a);
             return Ok(jsonString);
         }

@@ -24,7 +24,7 @@ public partial class Product
     public string Dicountcondition { get; set; } = null!;
 
     public virtual Category Cat { get; set; } = null!;
-
+    //added by shazia on aug 21
     public virtual ICollection<Vendor> Vendors { get; set; } = new List<Vendor>();
 
     //Added by Mohtashim on 27-06-2023

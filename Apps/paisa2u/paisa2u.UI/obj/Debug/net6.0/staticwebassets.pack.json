@@ -369,50 +369,6 @@
       "PackagePath": "staticwebassets\\images\\logo.jpeg"
     },
     {
-      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\093.jpg20230817160053961.jpg",
-      "PackagePath": "staticwebassets\\images\\vendorimages\\093.jpg20230817160053961.jpg"
-    },
-    {
-      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\093.jpg20230817165116888.jpg",
-      "PackagePath": "staticwebassets\\images\\vendorimages\\093.jpg20230817165116888.jpg"
-    },
-    {
-      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\102.jpg20230817161732663.jpg",
-      "PackagePath": "staticwebassets\\images\\vendorimages\\102.jpg20230817161732663.jpg"
-    },
-    {
-      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\102.jpg20230817163959898.jpg",
-      "PackagePath": "staticwebassets\\images\\vendorimages\\102.jpg20230817163959898.jpg"
-    },
-    {
-      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\109.jpg20230817163659362.jpg",
-      "PackagePath": "staticwebassets\\images\\vendorimages\\109.jpg20230817163659362.jpg"
-    },
-    {
-      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\109.jpg20230817164637762.jpg",
-      "PackagePath": "staticwebassets\\images\\vendorimages\\109.jpg20230817164637762.jpg"
-    },
-    {
-      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\109.jpg20230818102843309.jpg",
-      "PackagePath": "staticwebassets\\images\\vendorimages\\109.jpg20230818102843309.jpg"
-    },
-    {
-      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\123.jpg20230817160811121.jpg",
-      "PackagePath": "staticwebassets\\images\\vendorimages\\123.jpg20230817160811121.jpg"
-    },
-    {
-      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\123.jpg20230818103626153.jpg",
-      "PackagePath": "staticwebassets\\images\\vendorimages\\123.jpg20230818103626153.jpg"
-    },
-    {
-      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\ahzam-REC.jpg20230817162414730.jpg",
-      "PackagePath": "staticwebassets\\images\\vendorimages\\ahzam-REC.jpg20230817162414730.jpg"
-    },
-    {
-      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\ahzam-REC.jpg20230817163216586.jpg",
-      "PackagePath": "staticwebassets\\images\\vendorimages\\ahzam-REC.jpg20230817163216586.jpg"
-    },
-    {
       "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\js\\mvc-grid\\mvc-grid.js",
       "PackagePath": "staticwebassets\\js\\mvc-grid\\mvc-grid.js"
     },

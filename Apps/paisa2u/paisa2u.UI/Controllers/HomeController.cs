@@ -100,7 +100,7 @@ namespace paisa2u.UI.Controllers
             }
         }
         //by Shazia on Jul 29-Jul 31, 2023
-        public async Task<ActionResult> GetSearch(IFormCollection collection)
+        public async Task<IActionResult> GetSearch(IFormCollection collection)
         {
             var select = collection["list1"]; //ID or All
             var option = collection["options"];
@@ -212,9 +212,28 @@ namespace paisa2u.UI.Controllers
                 }
             }
         }
-      
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> GetAllproductbyavendor(string vendorid)
+        {
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Clear();
+            var queryParams = new Dictionary<string, string>()
+                {
+                    {"vendorid", vendorid }
+                };
+            string url = QueryHelpers.AddQueryString("https://localhost:7172/api/Vendors/GetAllProductsByVendor", queryParams);
+            using (var response = await client.GetAsync(url))
+
+            {
+                string apiResponse = await response.Content.ReadAsStringAsync();
+
+                var a = JsonConvert.DeserializeObject<ProductByVendor[]>(apiResponse);
+                return View("../Shared/Vendor", a);
+
+
+            }
+        }
+public IActionResult Privacy()
         {
             return View();
         }

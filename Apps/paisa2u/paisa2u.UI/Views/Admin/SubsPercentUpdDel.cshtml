@@ -14,9 +14,30 @@
 
 <section class="py-2" id="Opportuanities">
     <script>
-        function hideme(param) {
-            alert('here');
+        function hideme(name) {
+            if (name.id == 'Edit' || name == 'Edit') {
+                var x = document.getElementById('defaultdiv');
+                x.style.display = "none";
+                var y = document.getElementById('edit');
+                y.style.display = "block";
 
+            }
+            else if (name.id == 'Delete' || name == 'Delete') {
+                var x = document.getElementById('defaultdiv');
+                x.style.display = "block";
+                var y = document.getElementById('edit');
+                y.style.display = "none";
+
+            }
+
+            else if (name.id == 'Cancel' || name == 'Cancel') {
+
+                var x = document.getElementById('defaultdiv');
+                x.style.display = "block";
+                var y = document.getElementById('edit');
+                y.style.display = "none";
+
+            }
         }//function Add closes
         function GetPercById(lRegId) {
             alert('RegId ' + lRegId);
@@ -72,12 +93,12 @@
                                      .Encoded(false)
                                      .Sanitized(false)
                                      .SetWidth(40)
-                                    .RenderValueAs(o => @<a href="#" onclick='hideme(123); GetPercById(@o.RegId);' data-modal='' id="ss" name="ss" data-id="@o.RegId" class="btn btn-success ss"> Update <span class='glyphicon  glyphicon-user'> </span> <img src="~/images/editicon.png" width="20" height="20" /> </a>);
+                                    .RenderValueAs(o => @<a href="#" onclick='hideme(Edit); GetPercById(@o.RegId);' data-modal='' id="ss" name="ss" data-id="@o.RegId" class="btn btn-success ss"> Update <span class='glyphicon  glyphicon-user'> </span> <img src="~/images/editicon.png" width="20" height="20" /> </a>);
                                     columns.Add()
                                     .Encoded(false)
                                     .Sanitized(false)
                                     .SetWidth(40)
-                                    .RenderValueAs(o => @<a href="#" onclick='hideme(123); DeleteRecord(@o.Recid);' data-modal='' id="sd" name="sd" data-id="@o.Recid" class="btn btn-success ss"> Delete <span class='glyphicon  glyphicon-user'> </span> <img src="~/images/delicon.png" width="20" height="20" /> </a>);
+                                    .RenderValueAs(o => @<a href="#" onclick='hideme(Delete); DeleteRecord(@o.Recid);' data-modal='' id="sd" name="sd" data-id="@o.Recid" class="btn btn-success ss"> Delete <span class='glyphicon  glyphicon-user'> </span> <img src="~/images/delicon.png" width="20" height="20" /> </a>);
 
    @*columns.Add(model => $"<a  onclick='hideme(123);' data-modal='' data-id=" + @model.RegId + " href='#' name=\"ss\" id=\"ss\" asp-action=\"PR\" asp-route-id=\"@model.Regid\" class=\"btn btn-success ss\" '> Update <span class='glyphicon      glyphicon-user'> </span> </a>").Encoded(false);*@
                                 
@@ -89,7 +110,7 @@
             </div>
             </div>
              </div>
-        <div id="editsubsperc">
+        <div id="edit" name="edit">
             <div id="default" style="width:99%;align-self:center;align-content:center">
                 <form id="frmeditsubsperc" method="post">
                     <table width="100%">

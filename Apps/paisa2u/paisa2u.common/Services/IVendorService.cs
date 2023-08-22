@@ -16,6 +16,12 @@ namespace paisa2u.common.Services
         Task<List<ProductByVendor>> GetAllProductsByCat(int catid, CancellationToken cancellationToken);
 
         Task<List<ProductByVendor>> GetAllProductsByCatAmount(int catid,int fromamount, int toamount, CancellationToken cancellationToken);
+        //with paging on Aug 21, 2023 by Shazia
+        Task<ActionResult<ProductByVendorResponse>> GetSingleProductByVendorP(int page);
+        Task<ActionResult<ProductByVendorResponse>> GetAllProductsOfAllVendorP(int page);
+        Task<ActionResult<ProductByVendorResponse>> GetAllProductsByVendorP(string vendorid, int page);
+        Task<ActionResult<ProductByVendorResponse>> GetAllProductsByCatP(int catid, int page);
+        Task<ActionResult<VendorListResponse>> GetVendorsP(int page);
 
     }
 }

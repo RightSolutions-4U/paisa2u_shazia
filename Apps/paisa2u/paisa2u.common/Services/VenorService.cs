@@ -1,13 +1,7 @@
 ﻿using paisa2u.common.Resources;
 using Microsoft.EntityFrameworkCore;
 using paisa2u.common.Models;
-using System.Text;
-using System.Net;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Drawing;
-using System.Linq;
 
 namespace paisa2u.common.Services
 {
@@ -39,7 +33,7 @@ namespace paisa2u.common.Services
                             .ToListAsync();
 
             return SingleProductByVendor1;
-            
+
         }
         public async Task<IEnumerable<ProductByVendor>> GetAllProductsOfAllVendor(CancellationToken cancellationToken)
         {
@@ -50,7 +44,7 @@ namespace paisa2u.common.Services
             return AllProducts;
 
         }
-      
+
         public async Task<List<ProductByVendor>> GetAllProductsByCat(int catid, CancellationToken cancellationToken)
         {
             var SingleProductByVendor1 = await _context
@@ -62,11 +56,11 @@ namespace paisa2u.common.Services
 
         }
 
-        public async Task<List<ProductByVendor>> GetAllProductsByCatAmount(int catid,int fromamount, int toamount, CancellationToken cancellationToken)
+        public async Task<List<ProductByVendor>> GetAllProductsByCatAmount(int catid, int fromamount, int toamount, CancellationToken cancellationToken)
         {
             var SingleProductByVendor1 = await _context
                             .GetAllProductsByVendor
-                            .Where(t => t.Catid == catid && (t.Discountamount>=fromamount && t.Discountamount <= toamount))
+                            .Where(t => t.Catid == catid && (t.Discountamount >= fromamount && t.Discountamount <= toamount))
                             .ToListAsync();
 
             return SingleProductByVendor1;
@@ -93,5 +87,107 @@ namespace paisa2u.common.Services
                             .ToListAsync();
             return AllProductByVendor;
         }
+
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ProductByVendorResponse>> GetSingleProductByVendorP(int page)
+        {
+            var pageResults = 3f;
+            var pageCount = Math.Ceiling(_context.GetProductByVendorP.Count() / pageResults);
+            var SingleProductByVendor1 = await _context
+                            .GetProductByVendorP
+                            .Skip((page - 1) * (int)pageResults)
+                            .Take((int)pageResults)
+                            .ToListAsync();
+            var response = new ProductByVendorResponse
+            {
+                Products = SingleProductByVendor1,
+                CurrentPage = page,
+                pages = (int)pageCount
+            };
+            return response;
+        }
+
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ProductByVendorResponse>> GetAllProductsByVendorP(string vendorid, int page)
+        {
+            var pageResults = 3f;
+            var pageCount = Math.Ceiling(_context.GetAllProductsByVendorP.Count() / pageResults);
+            var AllProductByVendor = await _context
+                            .GetAllProductsByVendorP
+                            .Where(t => t.Vendorid.ToString() == vendorid)
+                            .Skip((page - 1) * (int)pageResults)
+                            .Take((int)pageResults)
+                            .ToListAsync();
+            var response = new ProductByVendorResponse
+            {
+                Products = AllProductByVendor,
+                CurrentPage = page,
+                pages = (int)pageCount
+            };
+            return response;
+        }
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ProductByVendorResponse>> GetAllProductsOfAllVendorP(int page)
+        {
+            var pageResults = 3f;
+            var pageCount = Math.Ceiling(_context.GetAllProductsByVendorP.Count() / pageResults);
+            var AllProductByVendor = await _context
+                            .GetAllProductsByVendorP
+                            .Skip((page - 1) * (int)pageResults)
+                            .Take((int)pageResults)
+                            .ToListAsync();
+            var response = new ProductByVendorResponse
+            {
+                Products = AllProductByVendor,
+                CurrentPage = page,
+                pages = (int)pageCount
+            };
+            return response;
+        }
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ProductByVendorResponse>> GetAllProductsByCatP(int catid, int page)
+        {
+            var pageResults = 3f;
+            var pageCount = Math.Ceiling(_context.GetAllProductsByCatP.Count() / pageResults);
+            var AllProductByVendor = await _context
+                            .GetAllProductsByVendorP
+                            .Where(t => t.Catid == catid)
+                            .Skip((page - 1) * (int)pageResults)
+                            .Take((int)pageResults)
+                            .ToListAsync();
+            var response = new ProductByVendorResponse
+            {
+                Products = AllProductByVendor,
+                CurrentPage = page,
+                pages = (int)pageCount
+            };
+            return response;
+        }
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<VendorListResponse>> GetVendorsP(int page)
+        {
+            var pageResults = 3f;
+            var pageCount = Math.Ceiling(_context.GetVendorsP.Count() / pageResults);
+            var AllVendors = await _context
+                            .GetVendorsP
+                            .Skip((page - 1) * (int)pageResults)
+                            .Take((int)pageResults)
+                            .ToListAsync();
+            var response = new VendorListResponse
+            {
+                vendors = AllVendors,
+                CurrentPage = page,
+                pages = (int)pageCount
+            };
+            return response;
+        }
+
     }
 }
+
+
