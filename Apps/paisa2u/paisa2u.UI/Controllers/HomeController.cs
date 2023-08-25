@@ -6,6 +6,7 @@ using NuGet.Protocol;
 using paisa2u.common.Models;
 using paisa2u.common.Resources;
 using paisa2u.UI.Models;
+using System;
 using System.Diagnostics;
 using System.Security.Policy;
 using System.Text;
@@ -34,6 +35,38 @@ namespace paisa2u.UI.Controllers
  
             }
         }
+
+        //Aug 23, withdraw
+        public async Task<ActionResult<RegUserResource>> Withdrawals()
+        {
+            
+            var client1 = new HttpClient();
+            client1.DefaultRequestHeaders.Clear();
+            var queryParams = new Dictionary<string, string>()
+                {
+                    {"Regid",Request.Cookies["regid"] }
+                };
+            string url = QueryHelpers.AddQueryString("https://localhost:7172/api/Transactions/GetWallet", queryParams);
+
+            string urlcust = QueryHelpers.AddQueryString("https://localhost:7172/api/Users/GetRegUser", queryParams);
+            using (var response1 = await client1.GetAsync(urlcust))
+            {
+                string apiResponsecust = await response1.Content.ReadAsStringAsync();
+                var a = JsonConvert.DeserializeObject<RegUserResource>(apiResponsecust);
+                using (var response = await client1.GetAsync(url))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    ViewBag.Amount = apiResponse;
+
+                }
+                ViewBag.User = Request.Cookies["username"];
+                return View("../Shared/Withdrawal", a);
+
+            }
+            
+            
+        }
+
         //by Shazia on Aug 2, 2023
         //GetMyReferrals
         public async Task<ActionResult> GetMyReferrals(IFormCollection collection)

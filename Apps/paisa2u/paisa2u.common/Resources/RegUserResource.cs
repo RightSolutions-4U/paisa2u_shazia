@@ -10,7 +10,7 @@ namespace paisa2u.common.Resources
         string Email,
         string Username,
         string Pwd,
-        string Referredby,
+        int Referredby,
         string Regtype,
         string Vendortype,
         string Phonenumber,

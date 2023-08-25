@@ -41,6 +41,10 @@
                     <span class="glyphicon
                         glyphicon-search"></span> Invite A friend
                 </button>
+                <button type="button" class="btn btn-default" id="Withdraw" onclick="Withdraw()">
+                    <span class="glyphicon
+                        glyphicon-search"></span> Withdraw Amount
+                </button>
             </div>
             <!--Referrals button ends here-->
         </div>
@@ -86,6 +90,9 @@
                         }
                         function Invite() {
                             location.href = '@Url.Action("Invite","Home")';
+                        }
+                        function Withdraw() {
+                            location.href = '@Url.Action("Withdrawals","Home")';
                         }
                     $('#options').change(function() {
                            var Option = $('#options'); //vendor/products
@@ -169,7 +176,7 @@
              </div>
         </div>
       
-                    <div class="row flex-center h-100">
+                   @* <div class="row flex-center h-100">
                         <div class="col-xl-9">
                             <div class="row">
                             @{var prev = 0;}
@@ -206,6 +213,6 @@
                                 <!--Loop -->
                             </div>
                         </div>
-                    </div>
+                    </div>*@
     </div>
 </section>

@@ -393,7 +393,7 @@ namespace paisa2u.common.Services
         {
             List<RegUserResource> userslist = new List<RegUserResource>();
             var users1 = await _context.Users
-                .Where(x => x.Referredby==Regid.ToString())
+                .Where(x => x.Referredby==Regid)
                 .ToListAsync(cancellationToken);
             if (users1 == null)
                 throw new Exception("No referrals found with the given User Id!");

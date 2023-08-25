@@ -116,16 +116,16 @@ namespace paisa2u.API.Controllers
             return await _reguserService.GetRegType(Regid, cancellationToken);
         }
         [HttpGet("GetRegUser")]
-        public async Task<IActionResult> GetRegUser(int regid, CancellationToken cancellationToken)
+        public async Task<ActionResult<RegUserResource>> GetRegUser(int regid, CancellationToken cancellationToken)
         {
             try
             {
-                var response = await _reguserService.GetRegUser(regid, cancellationToken);
-                return Ok(response);
+                return await _reguserService.GetRegUser(regid, cancellationToken);
+                
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return BadRequest(new { ErrorMessage = e.Message });
+                return BadRequest(ex);
             }
         }
 

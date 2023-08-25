@@ -272,7 +272,7 @@ namespace paisa2u.UI.Controllers
             user.Phonenumber = collection["gr_register_phonenumber"];
             user.Substype = collection["Substype"];
             user.Regtype = collection["Regtype"];
-            user.Referredby = collection["gr_register_Referredby"];
+            user.Referredby = int.Parse(collection["gr_register_Referredby"]);
             user.Vendortype = collection["Vendortype"];
             var Autorenewal = collection["Autorenewal"];
             var Regstatus = collection["Regstatus"];

@@ -1,0 +1,106 @@
+﻿@*Added by Shazia on Jul 30, 2023 *@
+@{
+    ViewData["Title"] = "Withdrawal Page";
+}
+@using paisa2u.common.Resources
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+@model RegUserResource
+
+<section class="py-5" id="Transactions">
+    <!--/.bg-holder-->
+
+    <div class="container" style="top: 50px;">
+        <div class="row">
+
+            <div id="welcome" style="display:none">
+                @if (@ViewBag.message != null)
+                {
+                    <label id="welcomemessage"> @ViewBag.message </label>
+                }
+            </div>
+        </div>
+        <div class="row align-items-center min-vh-75 min-vh-lg-100">
+            <div class="col-md-7 col-lg-6 col-xxl-5 py-6 text-sm-start text-center">
+
+                <h1 class="mt-6 mb-sm-4 fw-semi-bold lh-sm fs-4 fs-lg-5 fs-xl-6">A New Way to Invest <br class="d-block d-lg-block" />in Agriculture</h1>
+                <p class="mb-4 fs-1">Zou provides farmes, ranchers, private foresters, and agricultural producers with online self service applications and educational materials.</p><a class="btn btn-lg btn-success" href="#" role="button">Invest Now</a>
+            </div>
+        </div>
+
+
+        <div class="row flex-center h-100">
+            <div class="col-md-7">
+                <div class="row">
+                    <h1 style="text-align:center"> Withdrawal</h1>
+
+                    @if (@ViewBag.Amount != null)
+                    {
+                    <label id="wallet"> Your Current balance is:   @ViewBag.Amount </label>
+                    
+                    <label id="Phone number"> Your Current mobile number:   @Model.Phonenumber </label>
+                    }
+                </div>
+                <form class="g-py-15" id="withdrawal" method="post" enctype="multipart/form-data">
+                   <div class="col-md-6 con-left">
+                      <div class="form-group mb-4" style="text-align:left">
+                        <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="Amount" for="Amount">Enter Amount <span class="fw-color-red">*</span>:</label>
+                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-14 g-px-14 trn" data-trn-placeholder="enter_amount" id="Amount" name="Amount" type="text" placeholder="Enter amount to withdraw">
+                      </div>
+                   </div>
+                    <table width="100%">
+                        <tr valign="middle">
+
+                            <td width="50%" align="right">
+                                <button type="button" class="btn btn-primary submit mb-4" onclick="location.reload()">Cancel</button>
+                                <button type="button" class="btn btn-primary submit mb-4" onclick="Withdraw(@Model.Regid)">Save</button>
+                                <input type="hidden" id="logged_user" name="logged_user" value="@ViewBag.User" />
+                                <input type="hidden" id="Datelogged" name="Datelogged" value="@Model.Endate" />
+                                <input type="hidden" id="Bal" name="Bal" value="@ViewBag.Amount" />
+                            </td>
+                        </tr>
+                    </table>
+                    <script>
+
+                        function Withdraw(lRegId) {
+
+                            var entryuser = $("#logged_user").val();
+                            //alert(entryuser + " " + lRegId + " " + $("#Amount").val() + " " + $("#Datelogged").val());
+                            var Amounttran = $("#Amount").val();
+                            var endate = new Date();/*$("#Datelogged").val();*/
+                            var tranObject =
+                            {
+                                RegId: lRegId,
+                                Amount: Amounttran,
+                                Endate: endate,/*Date.now.toString()*/
+                                Enuser: entryuser,
+                                Drcrid: "D"
+                            }
+                            alert("tranObject " + JSON.stringify(tranObject));
+                            $.ajax({
+                                type: "POST",
+                                url: "https://localhost:7172/api/Transactions/AddTransaction",
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                data: JSON.stringify(tranObject),
+                                success: function (response) {
+                                    alert(JSON.stringify(response));
+                                    alert("Transaction made successfully. Your current balance is: " + $("#Bal").val() - (response.amount));
+                                   //location.reload();
+                                },
+                                failure: function (data) {
+                                    alert('failure in getting vendors');
+                                    alert(data.responseText);
+                                },
+                                error: function (xhr, ajaxOptions, thrownError) {
+                                    alert(xhr.status);
+                                    alert(thrownError);
+                                } //error
+
+                            });//ajax closure
+                        }
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

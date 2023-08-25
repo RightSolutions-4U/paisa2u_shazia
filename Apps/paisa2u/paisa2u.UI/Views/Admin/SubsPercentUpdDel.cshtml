@@ -8,78 +8,19 @@
 @using System.Web;
 @addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
 @using paisa2u.common.Models
-@*@using NonFactors.Mvc.Grid;*@
+@using NonFactors.Mvc.Grid;
 @model IEnumerable<SubscriptionResource>
 
 
-<section class="py-2" id="Opportuanities">
-    <script>
-        function hideme(name) {
-            if (name.id == 'Edit' || name == 'Edit') {
-                var x = document.getElementById('defaultdiv');
-                x.style.display = "none";
-                var y = document.getElementById('edit');
-                y.style.display = "block";
-
-            }
-            else if (name.id == 'Delete' || name == 'Delete') {
-                var x = document.getElementById('defaultdiv');
-                x.style.display = "block";
-                var y = document.getElementById('edit');
-                y.style.display = "none";
-
-            }
-
-            else if (name.id == 'Cancel' || name == 'Cancel') {
-
-                var x = document.getElementById('defaultdiv');
-                x.style.display = "block";
-                var y = document.getElementById('edit');
-                y.style.display = "none";
-
-            }
-        }//function Add closes
-        function GetPercById(lRegId) {
-            alert('RegId ' + lRegId);
-            $.ajax({
-                type: "GET",
-                url: "https://localhost:7172/api/Subscriptionpercs/GetSubsPercentByRegId",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                data: { RegId: lRegId },
-                success: function (response) {
-                    alert(JSON.stringify(response));
-
-                    $('#Appowner').val(response.appowner);
-                    $('#Vendor').val(response.vendor);
-                    $('#Subvendor').val(response.subvendor);
-                    $('#Customer').val(response.customer);
-                    $('#Endate').val(response.endate);
-                    $('#Enuser').val(response.enuser); //whoever is logged in cookies["userid"]
-                    $('#Recid').val(response.recid);
-                    $('#RegId').val(response.regId);
-                    //location.reload();
-                },
-                failure: function (data) {
-                    alert('failure in getting vendors');
-                    alert(data.responseText);
-                },
-                error: function (xhr, ajaxOptions, thrownError) {
-                    alert(xhr.status);
-                    alert(thrownError);
-                } //error
-
-            });//ajax closure
-       }
- 
-    </script>
+<section class="py-2" id="Subscriptionupddel">
+    
     <div class="container" style="top: 10px;">  
         <div class="row flex-center h-10" id="defaultdiv">
         <div class="col-md-12">
             <div class="row">
                 <h5 style="text-align:center"> @ViewBag.Admin</h5>
                         @(
-                                Html.Grid(Model).Columns(columns =>
+                                Html.Grid(Model).Build(columns =>
                                  {
                                      columns.Add(model => model.Appowner).Titled("App owner");
                                      columns.Add(model => model.Vendor).Titled("Vendor");
@@ -90,40 +31,46 @@
                                      columns.Add(model => model.RegId).Titled("Registration Id");
                                      columns.Add(model => model.Recid).Titled("Record Id");
                                      columns.Add()
-                                     .Encoded(false)
-                                     .Sanitized(false)
-                                     .SetWidth(40)
-                                    .RenderValueAs(o => @<a href="#" onclick='hideme(Edit); GetPercById(@o.RegId);' data-modal='' id="ss" name="ss" data-id="@o.RegId" class="btn btn-success ss"> Update <span class='glyphicon  glyphicon-user'> </span> <img src="~/images/editicon.png" width="20" height="20" /> </a>);
-                                    columns.Add()
-                                    .Encoded(false)
-                                    .Sanitized(false)
-                                    .SetWidth(40)
-                                    .RenderValueAs(o => @<a href="#" onclick='hideme(Delete); DeleteRecord(@o.Recid);' data-modal='' id="sd" name="sd" data-id="@o.Recid" class="btn btn-success ss"> Delete <span class='glyphicon  glyphicon-user'> </span> <img src="~/images/delicon.png" width="20" height="20" /> </a>);
+                            .RenderedAs(o => Html.Raw($"<a name=\"ed\" id=\"ed\" href='javascript:void(0)' onclick=hideme(edit);GetPercById('" + o.RegId + "')><img src='../images/editicon.jpeg' height='20px' width='20px' alt-image='Image picture' /></a>"));
+                                     columns.Add()
+                            .RenderedAs(o => Html.Raw($"<a name=\"del\" id=\"del\" href='javascript:void(0)' onclick=hideme(del);DeleteRecord('" + o.Recid + "')><img src='..'/images/delicon.png' height='20px' width='20px' al-imaget='Image picture' /></a>"));
 
-   @*columns.Add(model => $"<a  onclick='hideme(123);' data-modal='' data-id=" + @model.RegId + " href='#' name=\"ss\" id=\"ss\" asp-action=\"PR\" asp-route-id=\"@model.Regid\" class=\"btn btn-success ss\" '> Update <span class='glyphicon      glyphicon-user'> </span> </a>").Encoded(false);*@
-                                
-
-                        }).Sortable().Filterable()
-                    )
-
+                                })
+                                .Sortable().Filterable()
+                                .Pageable(pager =>
+                                {
+                                    pager.PageSizes = new Dictionary<Int32, String> { { 0, "All" }, { 5, "5" }, { 10, "10" }, { 50, "50" } };
+                                    pager.ShowPageSizes = false;
+                                    pager.PagesToDisplay = 3;
+                                    pager.CurrentPage = 1;
+                                    pager.RowsPerPage = 5;
+                                })
+                        )
+                                     
+                    
+                    <script type="text/javascript" src="~/js/mvc-grid/mvc-grid.js"></script>
+                    <script>
+                        [].forEach.call(document.getElementsByClassName('mvc-grid'), function (element) {
+                            new MvcGrid(element);
+                        });
+                    </script>
+                    
                
             </div>
             </div>
+            
              </div>
-        <div id="edit" name="edit">
+        <div id="edit" name="edit" style="display:none">
             <div id="default" style="width:99%;align-self:center;align-content:center">
+                <table width="100%">
+                    <tr valign="middle">
+                        <td width="50%">
+                            <h4>Edit Subscription Percent</h4>
+                        </td>
+                     </tr>
+                </table>
                 <form id="frmeditsubsperc" method="post">
-                    <table width="100%">
-                        <tr valign="middle">
-                            <td width="50%">
-                                <h4>Edit Subscription Percent</h4>
-                            </td>
-                            <td width="50%" align="right">
-                                <button type="button" class="btn btn-primary submit mb-4" onclick="hideme('defaultdiv');location.reload()">Cancel</button>
-                                <button type="button" class="btn btn-primary submit mb-4" onclick="EditSubsPercent()">Save</button>
-                            </td>
-                        </tr>
-                    </table>
+                    
                     <div style="width:90%;align-self:center;align-content:center">
 
                         <div class="col-md-6 con-left">
@@ -148,11 +95,79 @@
                                 <input class="form-control" type="text" name="Subvendor" id="Subvendor" placeholder="" required="" style="width:500px;">
                             </div>
                         </div>
+
+                        <table width="100%">
+                            <tr valign="middle">
+                                
+                                <td width="50%" align="right">
+                                    <button type="button" class="btn btn-primary submit mb-4" onclick="hideme('defaultdiv');location.reload()">Cancel</button>
+                                    <button type="button" class="btn btn-primary submit mb-4" onclick="EditSubsPercent()">Save</button>
+                                </td>
+                            </tr>
+                        </table>
                         <script>
+                            
+                                function hideme(name) {
+                                    alert("name " + name);
+                                    if (name.id == 'edit' || name == 'edit') {
+                                        var x = document.getElementById('defaultdiv');
+                                        x.style.display = "none";
+                                        var y = document.getElementById('edit');
+                                        y.style.display = "block";
+
+                                    }
+                                else if (name.id == 'del' || name == 'del') {
+                                        var x = document.getElementById('defaultdiv');
+                                        x.style.display = "block";
+                                        var y = document.getElementById('edit');
+                                        y.style.display = "none";
+
+                                    }
+
+                                    else if (name.id == 'Cancel' || name == 'Cancel') {
+
+                                        var x = document.getElementById('defaultdiv');
+                                        x.style.display = "block";
+                                        var y = document.getElementById('edit');
+                                        y.style.display = "none";
+
+                                    }
+                                }//function hideme closes
+
+                            function GetPercById(lRegId) {
+                                alert("lRegId " + lRegId);
+                                $.ajax({
+                                    type: "GET",
+                                    url: "https://localhost:7172/api/Subscriptionpercs/GetSubsPercentByRegId",
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "json",
+                                    data: { RegId: lRegId },
+                                    success: function (response) {
+                                        alert(JSON.stringify(response));
+
+                                        $('#Appowner').val(response.appowner);
+                                        $('#Vendor').val(response.vendor);
+                                        $('#Subvendor').val(response.subvendor);
+                                        $('#Customer').val(response.customer);
+                                        $('#Endate').val(response.endate);
+                                        $('#Enuser').val(response.enuser); //whoever is logged in cookies["userid"]
+                                        $('#Recid').val(response.recid);
+                                        $('#RegId').val(response.regId);
+                                        //location.reload();
+                                    },
+                                    failure: function (data) {
+                                        alert('failure in getting vendors');
+                                        alert(data.responseText);
+                                    },
+                                    error: function (xhr, ajaxOptions, thrownError) {
+                                        alert(xhr.status);
+                                        alert(thrownError);
+                                    } //error
+
+                                });//ajax closure
+                            }
                             function DeleteRecord(lRecId) {
-                                //var Recid = $(sd).data('id');
-                                alert("recid " + lRecId);
-                                alert('here');
+                              
                                 $.ajax({
                                     type: 'GET',
                                     url: 'https://localhost:7172/api/Subscriptionpercs/DeleteSubsPerc',
@@ -205,6 +220,7 @@
                                 })
                             }
                         </script>
+                        
                     </div>
                 </form>
 

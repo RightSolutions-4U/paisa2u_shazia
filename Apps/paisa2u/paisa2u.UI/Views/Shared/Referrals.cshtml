@@ -9,20 +9,8 @@
 @model IEnumerable<RegUserRegisterResource>
 @using NonFactors.Mvc.Grid;
 
-<section class="py-5" id="Opportuanities">
+<section class="py-5" id="Referrals">
    <!--/.bg-holder-->
-    <script>
-        
-        function hideme(name) {
-            alert("in here");
-  
-            }
-        function Add(name) {
-            alert("in here "+name);
-
-
-        }
-            </script>
     <div class="container" style="top: 50px;">
         <div class="row">
 
@@ -52,30 +40,26 @@
                             columns.Add(model => model.Firstname).Titled("User Name");
                             columns.Add(model => model.Email).Titled("User Email");
                             columns.Add(model => model.regid).Titled("Registration ID");
-                            @*columns.Add(model => "<a href='" + Url.Action("Edit", new { model.regid }) + "'>Edit</a>");*@
-                        columns.Add()
-                        
-                                    .RenderedAs(o => $"<a name=\"ed\" id=\"ed\" href='#' onclick=hideme(Add);Add(" + new { o.regid } + ") ><img src='../images/editicon.png' height='20px'  width='20px' alt='Image picture' /></a>");
-
-                                      }
-                    ).Sortable().Filterable().Empty("No data Found").Pageable(pager =>
+         
+                              })
+                            .Sortable().Filterable().Empty("No data Found")
+                            .Pageable(pager =>
                             {
                             pager.PageSizes = new Dictionary<Int32, String> { { 0, "All" }, { 5, "5" }, { 10, "10" }, { 50, "50" } };
                             pager.ShowPageSizes = false;
                             pager.PagesToDisplay = 3;
                             pager.CurrentPage = 1;
                             pager.RowsPerPage = 5;
-                        })
+                            })
                     )
-                    
-                    
+             </div>
             </div>
-            </div>
-              <script type="text/javascript" src="~/js/mvc-grid/mvc-grid.js"></script>
+            <script type="text/javascript" src="~/js/mvc-grid/mvc-grid.js"></script>
             <script>
                 [].forEach.call(document.getElementsByClassName('mvc-grid'), function (element) {
                     new MvcGrid(element);
-                });</script>
+                });
+             </script>
            
         </div>
     </div>

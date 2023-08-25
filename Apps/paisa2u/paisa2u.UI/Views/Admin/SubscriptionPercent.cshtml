@@ -7,7 +7,7 @@
 @using System.Web
 @using paisa2u.common.Resources
 @addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
-@*@using NonFactors.Mvc.Grid;*@
+@using NonFactors.Mvc.Grid;
 
 
 @model IEnumerable<RegUserResource>
@@ -18,7 +18,7 @@
             <div class="row">
                     <h5 style="text-align:center"> @ViewBag.Admin</h5>
                     @(
-                            Html.Grid(Model).Columns(columns =>
+                            Html.Grid(Model).Build(columns =>
                             {
                                 columns.Add(model => model.Firstname).Titled("First Name");
                                 columns.Add(model => model.Lastname).Titled("Last Name");
@@ -26,34 +26,35 @@
                                 columns.Add(model => model.Enuser).Titled("Entry user");
                                 columns.Add(model => model.Regid).Titled("Registration Id");
                                 columns.Add()
-                            .Encoded(false)
-                            .Sanitized(false)
-                            .SetWidth(40)
-                            .RenderValueAs(o => @<a href="#" onclick='hideme(Add); Sendid(@o.Regid)' data-modal='' id="ss" name="ss" data-id="@o.Regid" class="btn btn-success ss"> Add <span class='glyphicon  glyphicon-user'> </span> <img src="~/images/editicon.png" width="20" height="20" /> </a>);
-
-                            }).Sortable().Filterable()
-                        ).Pageable(pager =>
-                        {
-                            pager.PageSizes = new Dictionary<Int32, String> { { 0, "All" }, { 5, "5" }, { 10, "10" }, { 50, "50" } };
-                            pager.ShowPageSizes = false;
-                            pager.PagesToDisplay = 3;
-                            pager.CurrentPage = 1;
-                            pager.RowsPerPage = 5;
-                        })
+                                .RenderedAs(o => Html.Raw($"<a name=\"add\" id=\"add\" href='javascript:void(0)' onclick=hideme(Add);Sendid('" + o.Regid + "')><img src='../images/addicon.png' height='20px' width='20px' alt='Image picture' /></a>"));
+                            })
+                            .Sortable().Filterable()
+                            .Pageable(pager =>
+                            {
+                                pager.PageSizes = new Dictionary<Int32, String> { { 0, "All" }, { 5, "5" }, { 10, "10" }, { 50, "50" } };
+                                pager.ShowPageSizes = false;
+                                pager.PagesToDisplay = 3;
+                                pager.CurrentPage = 1;
+                                pager.RowsPerPage = 5;
+                            })
+                            @*previous code of asp.net mvc grid*@
+                        @*columns.Add()
+                    .Encoded(false)
+                    .Sanitized(false)
+                    .SetWidth(40)
+                    .RenderValueAs(o => @<a href="#" onclick='hideme(Add); Sendid(@o.Regid)' data-modal='' id="ss" name="ss" data-id="@o.Regid" class="btn btn-success ss"> Add <span class='glyphicon  glyphicon-user'> </span> <img src="~/images/editicon.png" width="20" height="20" /> </a>);
+                    *@
                         )
-                   
-
-                </div>
+                 </div>
         </div>
     </div>
 
     <div style="display:none" id="Add" name="Add">
-        <h1> Add Subscription</h1>
-        <button onclick="hideme('Cancel')" id="cancel" name="cancel" class="btn btn-lg btn-success rounded g-py-13 g-px-25 trn gr_spinner_btn" data-trn="register" type="submit">
-            Cancel
-        </button>
+        <h1> Add Subscription</h1> <br />
+        
+        <br />
         <div class="col-md-6 con-left">
-                <input type="text" id="RegId" name="RegId">
+                <input type="hidden" id="RegId" name="RegId">
                 <input type="hidden" id="Enuser" name="Enuser">
             <div class="form-group mb-4" style="text-align:left">
                 <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13 trn" data-trn="Appowner" for="Appowner">% for App owner <span class="fw-color-red">*</span>:</label>
@@ -77,6 +78,9 @@
                         AddPercent
                         <span class="spinner"></span>
                     </button>
+                    <button onclick="hideme('Cancel')" id="cancel" name="cancel" class="btn btn-lg btn-success rounded g-py-13 g-px-25 trn gr_spinner_btn" data-trn="register" type="submit">
+                            Cancel
+                    </button>
                 </div>
 
             </div>
@@ -87,7 +91,7 @@
         <script>
             var a = document.getElementById("RegId"); //get the id to set its value
             function hideme(name)
-            {alert("in here");
+            {
                     if (name.id == 'Add' || name == 'Add') {
                         var x = document.getElementById('defaultdiv');
                         x.style.display = "none";

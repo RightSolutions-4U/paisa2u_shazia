@@ -73,7 +73,7 @@ namespace paisa2u.API.Controllers
             {
                 Subscriptionperc subscriptionperc = new Subscriptionperc();
                 subscriptionperc.Endate = DateTime.Now;
-                subscriptionperc.Enuser = Request.Cookies["username"]; // set in login of the form
+                subscriptionperc.Enuser = "Shazia";/*Request.Cookies["username"];*/ // set in login of the form
                 var Appowner = collection["Appowner"];
                 var Vendor = collection["Vendor"];
                 var Customer = collection["Customer"];

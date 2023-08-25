@@ -19,7 +19,7 @@ public partial class Users
 
     public string Pwd { get; set; } = null!;
 
-    public string? Referredby { get; set; } 
+    public int Referredby { get; set; } 
 
     public string Regtype { get; set; } = null!;
 

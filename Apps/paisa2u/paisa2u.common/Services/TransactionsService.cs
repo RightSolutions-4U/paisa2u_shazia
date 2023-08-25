@@ -19,10 +19,21 @@ namespace paisa2u.common.Services
         }
         public async Task<TransactionsResource> AddTransaction(TransactionsResource resource, CancellationToken cancellationToken)
         {
+            var amount = resource.amount;
+           
+            if (resource.drcrid == "D")
+            {
+                amount = -1 * amount;
+            }
+            else
+            {
+                amount = 1 * amount;
+            };
+          
             var transaction = new transactions
             {
                 RegId = resource.regId,
-                Amount = resource.amount,
+                Amount = amount,
                 Endate = resource.endate,
                 Enuser = resource.enuser,
                 Drcrid = resource.drcrid
