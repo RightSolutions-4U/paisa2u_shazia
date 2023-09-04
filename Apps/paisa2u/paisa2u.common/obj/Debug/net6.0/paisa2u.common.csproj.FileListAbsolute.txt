@@ -85,8 +85,6 @@ C:\Mars\Ayaz UAE\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\runtimes\win-arm64
 C:\Mars\Ayaz UAE\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Mars\Ayaz UAE\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Mars\Ayaz UAE\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\appsettings.Development.json
-C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\appsettings.json
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\paisa2u.common.staticwebassets.runtime.json
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\paisa2u.common.exe
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\paisa2u.common.deps.json
@@ -185,3 +183,5 @@ C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.common\bin\Debug
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\appsettings.Development_1.json
+C:\Users\smali\Vendor_Projects\DiscountApp\Apps\paisa2u\paisa2u.common\bin\Debug\net6.0\appsettings_1.json

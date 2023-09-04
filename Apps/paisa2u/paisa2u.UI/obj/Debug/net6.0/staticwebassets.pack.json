@@ -369,6 +369,14 @@
       "PackagePath": "staticwebassets\\images\\logo.jpeg"
     },
     {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\Nike.png",
+      "PackagePath": "staticwebassets\\images\\vendorimages\\Nike.png"
+    },
+    {
+      "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\adidas.png",
+      "PackagePath": "staticwebassets\\images\\vendorimages\\adidas.png"
+    },
+    {
       "Id": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\js\\mvc-grid\\mvc-grid.js",
       "PackagePath": "staticwebassets\\js\\mvc-grid\\mvc-grid.js"
     },

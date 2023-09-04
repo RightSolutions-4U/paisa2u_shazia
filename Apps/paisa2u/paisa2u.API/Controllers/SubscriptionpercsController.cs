@@ -113,7 +113,6 @@ namespace paisa2u.API.Controllers
             try
             {
                 Subscriptionperc subscriptionperc = new Subscriptionperc();
-
                 subscriptionperc.Endate = DateTime.Parse(collection["Endate"]);
                 subscriptionperc.RegId = int.Parse(collection["RegId"]);
                 subscriptionperc.RecId = int.Parse(collection["RecId"]);
@@ -134,8 +133,8 @@ namespace paisa2u.API.Controllers
                 int.Parse(collection["RegId"]),
                 float.Parse(collection["Appowner"]),
                 float.Parse(collection["Vendor"]),
-                float.Parse(collection["Customer"]),
                 float.Parse(collection["Subvendor"]),
+                float.Parse(collection["Customer"]),
                 subscriptionperc.Endate,
                 collection["Enuser"]
 

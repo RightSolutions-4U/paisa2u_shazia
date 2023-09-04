@@ -64,9 +64,8 @@
                         function Withdraw(lRegId) {
 
                             var entryuser = $("#logged_user").val();
-                            //alert(entryuser + " " + lRegId + " " + $("#Amount").val() + " " + $("#Datelogged").val());
                             var Amounttran = $("#Amount").val();
-                            var endate = new Date();/*$("#Datelogged").val();*/
+                            var endate = new Date();
                             var tranObject =
                             {
                                 RegId: lRegId,
@@ -84,8 +83,9 @@
                                 data: JSON.stringify(tranObject),
                                 success: function (response) {
                                     alert(JSON.stringify(response));
-                                    alert("Transaction made successfully. Your current balance is: " + $("#Bal").val() - (response.amount));
-                                   //location.reload();
+                                    var amt = $("#Bal").val() - response.amount;
+                                    alert("Transaction made successfully");
+                                   location.reload();
                                 },
                                 failure: function (data) {
                                     alert('failure in getting vendors');

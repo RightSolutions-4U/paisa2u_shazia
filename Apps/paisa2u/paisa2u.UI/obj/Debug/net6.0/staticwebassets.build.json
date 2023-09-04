@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "djp1dCXG6BnYtD4mSN/IAJJn5ChaJje00vbXJ6Eqq1Q=",
+  "Hash": "qhh3hBv07FeESICfc9Hot1bq6h/QGVIthbLCzUhJDCg=",
   "Source": "paisa2u.UI",
   "BasePath": "_content/paisa2u.UI",
   "Mode": "Default",
@@ -2652,6 +2652,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\adidas.png",
+      "SourceId": "paisa2u.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\",
+      "BasePath": "_content/paisa2u.UI",
+      "RelativePath": "images/vendorimages/adidas.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\vendorimages\\adidas.png"
+    },
+    {
+      "Identity": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\images\\vendorimages\\Nike.png",
+      "SourceId": "paisa2u.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\",
+      "BasePath": "_content/paisa2u.UI",
+      "RelativePath": "images/vendorimages/Nike.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\vendorimages\\Nike.png"
     },
     {
       "Identity": "C:\\Users\\smali\\Vendor_Projects\\DiscountApp\\Apps\\paisa2u\\paisa2u.UI\\wwwroot\\js\\mvc-grid\\mvc-grid.js",
